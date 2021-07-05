@@ -5,8 +5,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PoppaJS | Easy to use popup library</title>
+	<link rel="stylesheet" href="css/modality.css">
 </head>
 <body>
+	<button class="makepop">Show</button>
 
+
+	<div class="callback">
+		<p class="callback__desc">lalala</p>
+	</div>
+
+
+	<script src="js/poppa.js"></script>
+	<script>
+		modality({
+			clickTrigger: '.makepop',
+			pop: '.callback',
+		})
+	</script>
 </body>
 </html>

@@ -2,10 +2,33 @@
 // Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
 
 
+/**
+ * 
+ * Show popup
+ * 
+ * @param {string} $popWrap className or node
+ * @param {Popup} $pop className or node
+ * @param {function} $onOpen function on open
+ */
+function openPop($popWrap, $pop, $onOpen = null) {
+	// typeof $popWrap == 'object'
+	// 	? $popWrap.classList.add('pop-wrapper--opened')
+	// 	: document.querySelector($popWrap).classList.add('pop-wrapper--opened');
 
-function showPop($popWrap, $pop, $onOpen = null) {
-	$popWrap.classList.add('pop-wrapper--opened');
-	$pop.classList.add('pop--opened');
+	// typeof $pop == 'object'
+	// 	? $pop.classList.add('pop--opened')
+	// 	: document.querySelector($pop).classList.add('pop--opened');
+
+
+	if ( typeof $pop == 'object' ) {
+		$popWrap.classList.add('pop-wrapper--opened')
+		$pop.classList.add('pop--opened')
+	} else {
+		document.querySelector($popWrap).classList.add('pop-wrapper--opened');
+		document.querySelector($pop).classList.add('pop--opened');
+	}
+
+
 	document.querySelector('html').classList.add('pop-opened--html');
 	if ($onOpen != null) {
 		$onOpen();
@@ -13,22 +36,35 @@ function showPop($popWrap, $pop, $onOpen = null) {
 }
 
 
-
+/**
+ * 
+ * Hide popup
+ * 
+ * @param {string} $popWrap className or node
+ * @param {string} $pop className or node
+ * @param {function} $onClose function on open
+ */
 function closePop($popWrap, $pop, $onClose = null) {
-	$pop.classList.remove('pop--opened');
-	$popWrap.classList.remove('pop-wrapper--opened')
+	typeof $popWrap == 'object'
+		? $popWrap.classList.remove('pop-wrapper--opened')
+		: document.querySelector($popWrap).classList.remove('pop-wrapper--opened');
+
+	typeof $pop== 'object'
+		? $pop.classList.remove('pop--opened')
+		: document.querySelector($pop).classList.remove('pop--opened');
+
 	document.querySelector('html').classList.remove('pop-opened--html')
 	if ($onClose != null) {
 		$onClose();
 	}
 }
 
+
 function closePopByOutsideClick($) {
 	// console.log('click outside init')
 	document.querySelector($.popWrap).addEventListener('click', function(event) {
 
-		/* Normally - event.tagert.class[0] on click outside the pop === 'pop-aligner'
-		 */
+		/* Normally - event.tagert.class[0] on click outside the pop === 'pop-aligner' */
 		if (event.target.classList[0] === 'pop-aligner') {
 			let popWrap = document.querySelector($.popWrap);
 			let pop = document.querySelector($.pop);
@@ -45,7 +81,7 @@ function popToggle($popWrap, $pop, $onOpen, $onClose){
 	let	isPopHidden = window.getComputedStyle(popWrap).getPropertyValue('visibility') == 'hidden';
 	let pop = $pop;
 	isPopHidden
-		? showPop(popWrap, pop, $onOpen)
+		? openPop(popWrap, pop, $onOpen)
 		: closePop(popWrap, pop, $onClose)
 
 	// let form_status = opener.getAttribute('data-form-name');
@@ -130,6 +166,8 @@ function createPopStructure($) {
 	// console.log('Closer created');
 }
 
+
+
 function modality($){
 	// let opener = [...document.querySelectorAll(data.clickTrigger)];
 	// let closer = [...document.querySelectorAll(data.popCloser)];
@@ -157,7 +195,7 @@ function modality($){
 		let popShown = false;
 		document.querySelector('.pop-leaving-area').addEventListener('mouseenter', function() {
 			if (popShown === false) {
-				showPop(popWrap, pop);
+				openPop(popWrap, pop);
 				popShown = true;
 				// setTimeout(function(){
 				//     popShown = false
@@ -166,7 +204,7 @@ function modality($){
 		})
 		// document.addEventListener('mouseleave', function() {
 		//     if (popShown === false) {
-		//         showPop(popWrap, pop);
+		//         openPop(popWrap, pop);
 		//         popShown = true;
 		//         // setTimeout(function(){
 		//         //     popShown = false
