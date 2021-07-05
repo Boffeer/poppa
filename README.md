@@ -20,6 +20,7 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | clickTrigger      | css class string  | '.my-button'  | - [x]       |
 | onOpen            | function name     | doSomething   | - [x]       |
 | onClose           | function name     | doSomething   | - [x]       |
+| closeType         | string            | inner/outer/none | - [ ]    |
 | beforeOpen        | function name     | doSomething   | - [ ]       |
 | beforeClose       | function name     | doSomething   | - [ ]       |
 | timerTrigger      | number in ms      | 30            | - [ ]       |
@@ -39,6 +40,7 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 ## Functions
 
 | Function                                      | is released |
+| --------------------------------------------- | ----------- |
 | `openPop('.my-pop', function)`                | - [x]       |
 `closePop('.my-pop', function)`                 | - [x]       |
 | `additionalClickTrigger('.my-pop', function)` | - [ ]       |
