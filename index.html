@@ -5,21 +5,37 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PoppaJS | Easy to use popup library</title>
-	<link rel="stylesheet" href="css/modality.css">
+	<link rel="stylesheet" href="css/poppa.css">
+	<link rel="stylesheet" href="css/index.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<button class="makepop">Show</button>
+
+	<header class="header">
+
+	</header>
+
+	<section class="hero">
+		<h1 class="hero__title">Poppa</h1>
+		<p class="hero__desc">Vanilla JS easy to use popup library</p>
+		<button class="hero__get">Get Poppa</button>
+		<button class="hero__cases">Cases</button>
+	</section>
 
 
-	<div class="callback">
-		<p class="callback__desc">lalala</p>
+	<div class="poppa-pops">
+		<div class="callback">
+			<p class="callback__desc">lalala</p>
+		</div>
 	</div>
 
 
 	<script src="js/poppa.js"></script>
 	<script>
 		modality({
-			clickTrigger: '.makepop',
+			clickTrigger: '.hero__get',
 			pop: '.callback',
 		})
 	</script>

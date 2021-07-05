@@ -1,35 +1,40 @@
 // logErrors: parametr
 // Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
 
+let popClass = 'poppa';
+let popOpenedClass = 'poppa--opened'
+
+let popWrapperClass = 'poppa-wrapper';
+let popWrapperOenedClass = 'poppa-wrapper--opened';
+
+let poppaAlignerClass = 'poppa-aligner';
+
+let poppaCloserClass = 'poppa__closer';
+
+let poppaScrollBlockerClass = 'poppa-html--opened';
 
 /**
  * 
- * Show popup
+ * Open popup
  * 
- * @param {string} $popWrap className or node
- * @param {Popup} $pop className or node
+ * @param {string} $pop className or querySelecotr
  * @param {function} $onOpen function on open
  */
-function openPop($popWrap, $pop, $onOpen = null) {
-	// typeof $popWrap == 'object'
-	// 	? $popWrap.classList.add('pop-wrapper--opened')
-	// 	: document.querySelector($popWrap).classList.add('pop-wrapper--opened');
 
-	// typeof $pop == 'object'
-	// 	? $pop.classList.add('pop--opened')
-	// 	: document.querySelector($pop).classList.add('pop--opened');
-
-
+function openPop( $pop, $onOpen = null) {
 	if ( typeof $pop == 'object' ) {
-		$popWrap.classList.add('pop-wrapper--opened')
-		$pop.classList.add('pop--opened')
+		let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
+		popWrap.classList.add(popWrapperOenedClass)
+		$pop.classList.add(popOpenedClass);
+	} else if ( typeof $pop == 'string' ) {
+		document.querySelector($pop + '-wrapper').classList.add(popWrapperOenedClass)
+		document.querySelector($pop).classList.add(popOpenedClass);
 	} else {
-		document.querySelector($popWrap).classList.add('pop-wrapper--opened');
-		document.querySelector($pop).classList.add('pop--opened');
+		console.log('not valid vrgument type')
 	}
 
 
-	document.querySelector('html').classList.add('pop-opened--html');
+	document.querySelector('html').classList.add(poppaScrollBlockerClass);
 	if ($onOpen != null) {
 		$onOpen();
 	}
@@ -38,74 +43,81 @@ function openPop($popWrap, $pop, $onOpen = null) {
 
 /**
  * 
- * Hide popup
+ * Close popup
  * 
- * @param {string} $popWrap className or node
- * @param {string} $pop className or node
+ * @param {string} $pop className or querySelecotr
  * @param {function} $onClose function on open
  */
-function closePop($popWrap, $pop, $onClose = null) {
-	typeof $popWrap == 'object'
-		? $popWrap.classList.remove('pop-wrapper--opened')
-		: document.querySelector($popWrap).classList.remove('pop-wrapper--opened');
+function closePop( $pop, $onClose = null) {
+	if ( typeof $pop == 'object' ) {
+		let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
+		popWrap.classList.remove(popWrapperOenedClass)
+		$pop.classList.remove(popOpenedClass);
+	} else if ( typeof $pop == 'string' ) {
+		document.querySelector($pop + '-wrapper').classList.remove(popWrapperOenedClass)
+		document.querySelector($pop).classList.remove(popOpenedClass);
+	} else {
+		console.log('not valid vrgument type')
+	}
 
-	typeof $pop== 'object'
-		? $pop.classList.remove('pop--opened')
-		: document.querySelector($pop).classList.remove('pop--opened');
-
-	document.querySelector('html').classList.remove('pop-opened--html')
+	document.querySelector('html').classList.remove(poppaScrollBlockerClass)
 	if ($onClose != null) {
 		$onClose();
 	}
 }
 
 
+/**
+ * 
+ * Helper just for main function poppa
+ * @param {*} $ 
+ */
 function closePopByOutsideClick($) {
-	// console.log('click outside init')
 	document.querySelector($.popWrap).addEventListener('click', function(event) {
 
 		/* Normally - event.tagert.class[0] on click outside the pop === 'pop-aligner' */
-		if (event.target.classList[0] === 'pop-aligner') {
-			let popWrap = document.querySelector($.popWrap);
+		if (event.target.classList[0] === poppaAlignerClass) {
 			let pop = document.querySelector($.pop);
 			let onClose = $.onClose;
-			closePop(popWrap, pop, onClose);
+			closePop( pop, onClose );
 		}
 	})
 }
 
 
-
-function popToggle($popWrap, $pop, $onOpen, $onClose){
-	let popWrap = $popWrap;
+/**
+ * 
+ * @param {object} $pop querySelecotr for pop
+ * @param {function} $onOpen callback on open
+ * @param {function} $onClose  callback on close
+ */
+function popToggle($pop, $onOpen, $onClose){
+	let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
 	let	isPopHidden = window.getComputedStyle(popWrap).getPropertyValue('visibility') == 'hidden';
 	let pop = $pop;
 	isPopHidden
-		? openPop(popWrap, pop, $onOpen)
-		: closePop(popWrap, pop, $onClose)
-
-	// let form_status = opener.getAttribute('data-form-name');
-	// if (form_status != null){
-	//   let form_name_val = popWrap.querySelector('form input[name="arit_formname"]').getAttribute('value');
-	//   popWrap.querySelector('form input[name="arit_formname"]').value = `form_name_val ${form_status}`
-	// }
-
-
-	// console.log($popWrap, $pop, 'toggled')
+		? openPop( pop, $onOpen)
+		: closePop( pop, $onClose)
 }
 
 
-
+/**
+ * 
+ * @param {} $popWrap 
+ * @param {*} $pop 
+ */
 function popaAddClasses($popWrap, $pop) {
 	if ($popWrap != null || $popWrap != undefined) {
-		(!$popWrap.classList.contains('pop-wrapper')) ? $popWrap.classList.add('pop-wrapper') : false ;
+		( !$popWrap.classList.contains(popWrapperClass) )
+			? $popWrap.classList.add(popWrapperClass)
+			: false ;
 	}
 	if ($pop != null || $pop != undefined) {
-		(!$pop.classList.contains('pop')) ? $pop.classList.add('pop') : false ;
+		( !$pop.classList.contains(popClass) )
+			? $pop.classList.add(popClass)
+			: false ;
 	}
-		
 }
-
 
 
 function createPopStructure($) {
@@ -114,15 +126,13 @@ function createPopStructure($) {
 	let jsPopWrapper = document.createElement('div');
 	jsPopWrapper;
 	jsPopWrapper.classList.add($.popWrap.replace('.', ''));
-	jsPopWrapper.classList.add('pop-wrapper');
+	jsPopWrapper.classList.add(popWrapperClass);
 	document.querySelector('body').appendChild(jsPopWrapper);
-	// console.log('Wrapper created');
 
 	let jsPopAlingner = document.createElement('div');
 	jsPopAlingner;
-	jsPopAlingner.classList.add('pop-aligner');
+	jsPopAlingner.classList.add(poppaAlignerClass);
 	jsPopWrapper.appendChild(jsPopAlingner);
-	// console.log('Alginer created');
 	/* === /Create main wrapper === */
 
 
@@ -134,26 +144,26 @@ function createPopStructure($) {
 	if ($.popCloser != undefined) {
 		jsPopCloser.classList.add($.popCloser.replace('.', ''));
 	}
-	jsPopCloser.classList.add('pop-closer');
+	jsPopCloser.classList.add(poppaCloserClass);
 	
 
 
 	let pop = document.querySelector($.pop)
 	jsPopAlingner.appendChild(pop);
 	// console.log('Now pop inside aligner');
-	pop.classList.add('pop');
+	pop.classList.add(popClass);
 	// console.log('pop created');
 	
 	/* === inner closer ====  */
 	if ( $.popCloserType === 'inner' ) {
-		jsPopCloser.classList.add('pop-closer--inner');
+		jsPopCloser.classList.add( poppaCloserClass + '--inner' );
 		pop.appendChild(jsPopCloser)
 		closerCounter = 1;
 	}
 
 	/* === outer closer ====  */
 	if ( $.popCloserType === 'outer')  {
-		jsPopCloser.classList.add('pop-closer--outer');
+		jsPopCloser.classList.add( poppaCloserClass + '--outer' );
 		pop.appendChild(jsPopCloser)
 		closerCounter = 1;
 	}
@@ -161,7 +171,7 @@ function createPopStructure($) {
 	/* === corner close button === */
 	if (closerCounter == 0) {
 		jsPopAlingner.appendChild(jsPopCloser);
-		jsPopCloser.classList.add('pop-closer--corner');
+		jsPopCloser.classList.add( poppaCloserClass + '--corner' );
 	}
 	// console.log('Closer created');
 }
@@ -216,7 +226,7 @@ function modality($){
 		// let opener = document.querySelector($.clickTrigger);
 		const opener = [...document.querySelectorAll($.clickTrigger)];
 		opener.map(trigger => {
-			trigger.addEventListener("click", function() { popToggle(popWrap, pop, $.onOpen, $.onClose);
+			trigger.addEventListener("click", function() { popToggle( pop, $.onOpen, $.onClose );
 
 			})
 		// opener.addEventListener("click", function() { popToggle(popWrap, pop, $.onOpen, $.onClose);
@@ -225,7 +235,7 @@ function modality($){
 
 	let closer;
 	if (closer == undefined) {
-		closer = popWrap.querySelector('.pop-closer')
+		closer = popWrap.querySelector('.' + poppaCloserClass);
 	} else {
 		closer = popWrap.querySelector( $.popCloser );
 	}
@@ -234,7 +244,7 @@ function modality($){
 	
 	popWrap.removeAttribute('hidden');
 	
-	closer.addEventListener('click', function() {closePop(popWrap, pop, $.onClose)});
+	closer.addEventListener('click', function() {closePop( pop, $.onClose )});
 	closePopByOutsideClick(popaData);
 
 	// opener.map(mapped => mapped.addEventListener("click", () => popToggle(data.popWrap, data.pop)));
