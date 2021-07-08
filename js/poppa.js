@@ -129,10 +129,37 @@ function createPopStructure($) {
 	jsPopWrapper.classList.add(popWrapperClass);
 	document.querySelector('body').appendChild(jsPopWrapper);
 
+	if ($.popWrapperCustomClass) {
+		jsPopAlingner.classList.add(popWrapperCustomClass);
+	}
+
 	let jsPopAlingner = document.createElement('div');
 	jsPopAlingner;
 	jsPopAlingner.classList.add(poppaAlignerClass);
 	jsPopWrapper.appendChild(jsPopAlingner);
+
+	if ($.position) {
+		console.log($.position)
+		let vPosition;
+		let hPosition;
+		if ( $.position.includes('top') ) {
+			vPosition = 'top';
+			jsPopAlingner.classList.add(jsPopAlingner.classList[0] + '--' + vPosition);
+		} else if ( $.position.includes('bottom') ) {
+			vPosition = 'bottom';
+			jsPopAlingner.classList.add(jsPopAlingner.classList[0] + '--' + vPosition);
+		}
+		if ( $.position.includes('left') ) {
+			hPosition = 'left';
+			jsPopAlingner.classList.add(jsPopAlingner.classList[0] + '--' + hPosition);
+		} else if ( $.position.includes('right') ) {
+			hPosition = 'right';
+			jsPopAlingner.classList.add(jsPopAlingner.classList[0] + '--' + hPosition);
+		}
+	}
+	if ($.popAlignerCustomClass) {
+		jsPopAlingner.classList.add(popAlignerCustomClass);
+	}
 	/* === /Create main wrapper === */
 
 
@@ -178,7 +205,8 @@ function createPopStructure($) {
 
 
 
-function modality($){
+
+function poppa( $ ){
 	// let opener = [...document.querySelectorAll(data.clickTrigger)];
 	// let closer = [...document.querySelectorAll(data.popCloser)];
 	let popaData = $;
@@ -243,6 +271,10 @@ function modality($){
 	// popaAddClasses(popWrap, pop)
 	
 	popWrap.removeAttribute('hidden');
+
+	if ($.animation) {
+		pop.classList.add( 'poppa--' + $.animation );
+	}
 	
 	closer.addEventListener('click', function() {closePop( pop, $.onClose )});
 	closePopByOutsideClick(popaData);

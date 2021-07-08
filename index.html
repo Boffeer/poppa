@@ -5,6 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PoppaJS | Easy to use popup library</title>
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/poppa.css">
 	<link rel="stylesheet" href="css/index.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,30 +16,454 @@
 <body>
 
 	<header class="header">
-
+		<div class="container">
+			<div class="header-wrapper">
+				<nav class="header-wrapper-nav">
+					<a href="#demo" class="header-wrapper-nav__link">Demo</a>
+					<a href="#get" class="header-wrapper-nav__link">Get Poppa</a>
+				</nav>
+				<button class="header-wrapper__download">Download PoppaJS</button>
+			</div>
+		</div>
 	</header>
 
 	<section class="hero">
 		<h1 class="hero__title">Poppa</h1>
 		<p class="hero__desc">Vanilla JS easy to use popup library</p>
-		<button class="hero__get">Get Poppa</button>
-		<button class="hero__cases">Cases</button>
+		<div class="hero-buttons">
+			<a href="https://github.com/Boffeer/poppa" class="hero-buttons__get">Get Poppa</a>
+			<a href="#demo" class="hero-buttons__demo">Demo</a>
+		</div>
+	</section>
+
+	<section class="demo" id="demo">
+		<div class="container">
+			<h2 class="demo__title">Animations</h2>
+			<div class="row">
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--zoom-in">zoom-in</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--slide-up">slide-up</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--slide-right">slide-right</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--slide-down">slide-down</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--slide-left">slide-left</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button">snackbar</button>
+					</article>
+				</div>
+			</div>
+			<!-- //ANIMATIONS-->
+			<h2 class="demo__title">Position</h2>
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-top-left">top left</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-top">top</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-top-right">top right</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-left">left</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-center">center</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-right">right</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-bottom-left">bottom left</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-bottom">bottom</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-4 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--position-bottom-right">bottom right</button>
+					</article>
+				</div>
+			</div>
+		</div>
 	</section>
 
 
 	<div class="poppa-pops">
-		<div class="callback">
-			<p class="callback__desc">lalala</p>
+		<div class="demo-zoom-in demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
 		</div>
+
+		<div class="demo-slide-up demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-slide-down demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-slide-left demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-slide-right demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+		<!-- POSITION -->
+		<div class="demo-position-top-left demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-position-top demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+		<div class="demo-position-top-right demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-position-left demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-position-center demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+		<div class="demo-position-right demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+		<div class="demo-position-bottom-left demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-position-bottom demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+		<div class="demo-position-bottom-right demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+
+
+
 	</div>
 
 
 	<script src="js/poppa.js"></script>
 	<script>
-		modality({
-			clickTrigger: '.hero__get',
-			pop: '.callback',
-		})
+
+		// Animations
+		poppa({
+			clickTrigger: '.demo-card__button--zoom-in',
+			pop: '.demo-zoom-in',
+			animation: 'zoom-in'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--slide-up',
+			pop: '.demo-slide-up',
+			animation: 'slide-up'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--slide-down',
+			pop: '.demo-slide-down',
+			animation: 'slide-down'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--slide-left',
+			pop: '.demo-slide-left',
+			animation: 'slide-left'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--slide-right',
+			pop: '.demo-slide-right',
+			animation: 'slide-right',
+		});
+
+		// Position
+
+
+		poppa({
+			clickTrigger: '.demo-card__button--position-top-left',
+			pop: '.demo-position-top-left',
+			animation: 'slide-right',
+			position: 'top left'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-top',
+			pop: '.demo-position-top',
+			animation: 'slide-down',
+			position: 'top'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-top-right',
+			pop: '.demo-position-top-right',
+			animation: 'slide-left',
+			position: 'top right'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-left',
+			pop: '.demo-position-left',
+			animation: 'slide-right',
+			position: 'left'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-center',
+			pop: '.demo-position-center',
+			animation: 'zoom-in',
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-right',
+			pop: '.demo-position-right',
+			animation: 'slide-left',
+			position: 'right'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-bottom-left',
+			pop: '.demo-position-bottom-left',
+			animation: 'slide-right',
+			position: 'bottom left'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-bottom',
+			pop: '.demo-position-bottom',
+			animation: 'slide-up',
+			position: 'bottom'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--position-bottom-right',
+			pop: '.demo-position-bottom-right',
+			animation: 'slide-left',
+			position: 'bottom right'
+		});
+
 	</script>
 </body>
 </html>
