@@ -7,14 +7,13 @@
 	<title>PoppaJS | Easy to use popup library</title>
 	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/poppa.css">
+	<link rel="stylesheet" href="assets/poppa/poppa.min.css">
 	<link rel="stylesheet" href="css/index.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 	<header class="header">
 		<div class="container">
 			<div class="header-wrapper">
@@ -47,6 +46,11 @@
 				</div>
 				<div class="col-md-4 col-lg-3 col-xl-4">
 					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--zoom-out">zoom-out</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
 						<button class="demo-card__button demo-card__button--slide-up">slide-up</button>
 					</article>
 				</div>
@@ -65,13 +69,12 @@
 						<button class="demo-card__button demo-card__button--slide-left">slide-left</button>
 					</article>
 				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button">snackbar</button>
-					</article>
-				</div>
 			</div>
-			<!-- //ANIMATIONS-->
+		</div>
+	</section>
+
+	<section class="position">
+		<div class="container">
 			<h2 class="demo__title">Position</h2>
 			<div class="row">
 				<div class="col-md-4 col-lg-4 col-xl-4">
@@ -120,12 +123,150 @@
 					</article>
 				</div>
 			</div>
+
+		</div>
+	</section>
+
+	<section class="methods">
+		<div class="container">
+			<h2 class="methods__title">Functions</h2>
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-xl-6">
+					<article class="demo-card">
+						<p> openPop('.my-pop',function); </p>
+					</article>
+				</div>
+				<div class="col-md-6 col-lg-6 col-xl-6">
+					<article class="demo-card">
+						<p> closePop('.my-pop',function); </p>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="closers">
+		<div class="container">
+			<h2 class="demo__title">Closers</h2>
+			<div class="row">
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--closer-none">none</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--closer-outer">outer</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--closer-inner">inner</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--closer-corner">corner</button>
+						<p class="demo-card__default">default value</p>
+					</article>
+				</div>
+			</div>
+		</div>
+
+		<div class="poppa-pops-hider">
+			<div class="demo-closer-none demo-pop">
+				<div class="code">
+					<p>
+						<span class="code__function">poppa</span>
+						({
+							<span class="code-row">
+								<span class="code__parameter">pop</span>:
+								<span class="code__string"> '.demo-zoom-in'</span>,
+							</span>
+							<span class="code-row">
+								<span class="code__parameter">clickTrigger</span>:
+								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							</span>
+						})
+					</p>
+				</div>
+			</div>
+			<div class="demo-closer-outer demo-pop">
+				<div class="code">
+					<p>
+						<span class="code__function">poppa</span>
+						({
+							<span class="code-row">
+								<span class="code__parameter">pop</span>:
+								<span class="code__string"> '.demo-zoom-in'</span>,
+							</span>
+							<span class="code-row">
+								<span class="code__parameter">clickTrigger</span>:
+								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							</span>
+						})
+					</p>
+				</div>
+			</div>
+			<div class="demo-closer-inner demo-pop">
+				<div class="code">
+					<p>
+						<span class="code__function">poppa</span>
+						({
+							<span class="code-row">
+								<span class="code__parameter">pop</span>:
+								<span class="code__string"> '.demo-zoom-in'</span>,
+							</span>
+							<span class="code-row">
+								<span class="code__parameter">clickTrigger</span>:
+								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							</span>
+						})
+					</p>
+				</div>
+			</div>
+			<div class="demo-closer-corner demo-pop">
+				<div class="code">
+					<p>
+						<span class="code__function">poppa</span>
+						({
+							<span class="code-row">
+								<span class="code__parameter">pop</span>:
+								<span class="code__string"> '.demo-zoom-in'</span>,
+							</span>
+							<span class="code-row">
+								<span class="code__parameter">clickTrigger</span>:
+								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							</span>
+						})
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
 
 	<div class="poppa-pops">
 		<div class="demo-zoom-in demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+
+		<div class="demo-zoom-out demo-pop">
 			<div class="code">
 				<p>
 					<span class="code__function">poppa</span>
@@ -372,19 +513,45 @@
 		</div>
 
 
-
+		<div class="demo-timer demo-pop">
+			<div class="code">
+				<p>After 30 seconds this popup appears</p>
+				<br>
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-in'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
 
 	</div>
 
 
-	<script src="js/poppa.js"></script>
+	<script src="assets/poppa/poppa.js"></script>
 	<script>
 
 		// Animations
 		poppa({
 			clickTrigger: '.demo-card__button--zoom-in',
 			pop: '.demo-zoom-in',
-			animation: 'zoom-in'
+			animation: 'zoom-in',
+			customPopWrapperClass: 'custom-pop-wrapper-class',
+			customPopAlignerClass: 'custom-pop-aligner-class',
+			customPopCloserClass: 'custom-pop-closer-class',
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--zoom-out',
+			pop: '.demo-zoom-out',
+			animation: 'zoom-out'
 		});
 		poppa({
 			clickTrigger: '.demo-card__button--slide-up',
@@ -462,6 +629,34 @@
 			pop: '.demo-position-bottom-right',
 			animation: 'slide-left',
 			position: 'bottom right'
+		});
+
+		// Closers
+		poppa({
+			clickTrigger: '.demo-card__button--closer-none',
+			pop: '.demo-closer-none',
+			closerType: 'none'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--closer-outer',
+			pop: '.demo-closer-outer',
+			closerType: 'outer'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--closer-inner',
+			pop: '.demo-closer-inner',
+			closerType: 'inner'
+		});
+		poppa({
+			clickTrigger: '.demo-card__button--closer-corner',
+			pop: '.demo-closer-corner',
+			closerType: 'corner',
+		});
+
+		poppa({
+			clickTrigger: '.demo-timer',
+			pop: '.demo-timer',
+			timerTrigger: 30,
 		});
 
 	</script>

@@ -1,6 +1,3 @@
-// logErrors: parametr
-// Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
-
 let popClass = 'poppa';
 let popOpenedClass = 'poppa--opened'
 
@@ -11,7 +8,9 @@ let poppaAlignerClass = 'poppa-aligner';
 
 let poppaCloserClass = 'poppa__closer';
 
-let poppaScrollBlockerClass = 'poppa-html--opened';
+let poppaToScrollBlockElement = 'html';
+let poppaScrollBlockerClass = 'poppa-block-scrolling';
+
 
 /**
  * 
@@ -34,7 +33,7 @@ function openPop( $pop, $onOpen = null) {
 	}
 
 
-	document.querySelector('html').classList.add(poppaScrollBlockerClass);
+	document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass);
 	if ($onOpen != null) {
 		$onOpen();
 	}
@@ -60,7 +59,7 @@ function closePop( $pop, $onClose = null) {
 		console.log('not valid vrgument type')
 	}
 
-	document.querySelector('html').classList.remove(poppaScrollBlockerClass)
+	document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
 	if ($onClose != null) {
 		$onClose();
 	}
@@ -73,15 +72,16 @@ function closePop( $pop, $onClose = null) {
  * @param {*} $ 
  */
 function closePopByOutsideClick($) {
-	document.querySelector($.popWrap).addEventListener('click', function(event) {
-
-		/* Normally - event.tagert.class[0] on click outside the pop === 'pop-aligner' */
-		if (event.target.classList[0] === poppaAlignerClass) {
-			let pop = document.querySelector($.pop);
-			let onClose = $.onClose;
-			closePop( pop, onClose );
-		}
-	})
+	if ($.outOfPopClickClose !== false) {
+		document.querySelector($.popWrap).addEventListener('click', function(event) {
+			/* Normally - event.tagert.class[0] on click outside the pop === 'pop-aligner' */
+			if (event.target.classList[0] === poppaAlignerClass) {
+				let pop = document.querySelector($.pop);
+				let onClose = $.onClose;
+				closePop( pop, onClose );
+			}
+		})
+	}
 }
 
 
@@ -127,6 +127,10 @@ function createPopStructure($) {
 	jsPopWrapper;
 	jsPopWrapper.classList.add($.popWrap.replace('.', ''));
 	jsPopWrapper.classList.add(popWrapperClass);
+	typeof($.customPopWrapperClass) == 'string'
+		? jsPopWrapper.classList.add($.customPopWrapperClass) 
+		: false
+	
 	document.querySelector('body').appendChild(jsPopWrapper);
 
 	if ($.popWrapperCustomClass) {
@@ -136,6 +140,9 @@ function createPopStructure($) {
 	let jsPopAlingner = document.createElement('div');
 	jsPopAlingner;
 	jsPopAlingner.classList.add(poppaAlignerClass);
+	typeof($.customPopAlignerClass) == 'string'
+		? jsPopAlingner.classList.add($.customPopAlignerClass)
+		: false
 	jsPopWrapper.appendChild(jsPopAlingner);
 
 	if ($.position) {
@@ -172,6 +179,9 @@ function createPopStructure($) {
 		jsPopCloser.classList.add($.popCloser.replace('.', ''));
 	}
 	jsPopCloser.classList.add(poppaCloserClass);
+	typeof($.customPopCloserClass) == 'string'
+		? jsPopCloser.classList.add($.customPopCloserClass)
+		: false
 	
 
 
@@ -180,16 +190,23 @@ function createPopStructure($) {
 	// console.log('Now pop inside aligner');
 	pop.classList.add(popClass);
 	// console.log('pop created');
+
+	/* === none closer ====  */
+	if ( $.closerType === 'none' ) {
+		jsPopCloser.classList.add( poppaCloserClass + '--none' );
+		pop.appendChild(jsPopCloser)
+		closerCounter = 1;
+	}
 	
 	/* === inner closer ====  */
-	if ( $.popCloserType === 'inner' ) {
+	if ( $.closerType === 'inner' ) {
 		jsPopCloser.classList.add( poppaCloserClass + '--inner' );
 		pop.appendChild(jsPopCloser)
 		closerCounter = 1;
 	}
 
 	/* === outer closer ====  */
-	if ( $.popCloserType === 'outer')  {
+	if ( $.closerType === 'outer')  {
 		jsPopCloser.classList.add( poppaCloserClass + '--outer' );
 		pop.appendChild(jsPopCloser)
 		closerCounter = 1;
@@ -224,9 +241,9 @@ function poppa( $ ){
 		//         window.onbeforeunload = null;
 		//     }
 		// }
-		//
-		//
-		//
+		
+		
+		
 		// TODO: 
 		// Сделай параметр для счета количества открытия попапов вместо тру фолс
 		//
@@ -257,7 +274,6 @@ function poppa( $ ){
 			trigger.addEventListener("click", function() { popToggle( pop, $.onOpen, $.onClose );
 
 			})
-		// opener.addEventListener("click", function() { popToggle(popWrap, pop, $.onOpen, $.onClose);
 		});
 	}
 
@@ -268,17 +284,25 @@ function poppa( $ ){
 		closer = popWrap.querySelector( $.popCloser );
 	}
 
-	// popaAddClasses(popWrap, pop)
 	
 	popWrap.removeAttribute('hidden');
 
 	if ($.animation) {
 		pop.classList.add( 'poppa--' + $.animation );
+	} else {
+		pop.classList.add( 'poppa--zoom-in' );
 	}
 	
 	closer.addEventListener('click', function() {closePop( pop, $.onClose )});
 	closePopByOutsideClick(popaData);
 
+	if ($.timerTrigger != null) {
+		if ( typeof($.timerTrigger) == 'number' ) {
+			setTimeout(() => {
+				openPop(pop);
+			}, $.timerTrigger * 1000)
+		}
+	}
 	// opener.map(mapped => mapped.addEventListener("click", () => popToggle(data.popWrap, data.pop)));
 	// closer.map(mapped => mapped.addEventListener('click', () => closePop(data.popWrap, data.pop)));
 }

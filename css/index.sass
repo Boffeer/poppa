@@ -1,5 +1,6 @@
 html
     --c-accent: #FFCC00
+    --c-accent-light: #ffdd33
     --c-text-regular: #0f0f0f
     --c-text-second: #444
     --c-code-string: #34C759
@@ -9,6 +10,7 @@ html
 
     --shadow-button: 0px 4px 0px #E5B800
     --shadow-acent-bg: 0px 100px 80px rgba(255, 59, 48, 0.07), 0px 41.7776px 33.4221px rgba(255, 59, 48, 0.0503198), 0px 22.3363px 17.869px rgba(255, 59, 48, 0.0417275), 0px 12.5216px 10.0172px rgba(255, 59, 48, 0.035), 0px 6.6501px 5.32008px rgba(255, 59, 48, 0.0282725), 0px 2.76726px 2.21381px rgba(255, 59, 48, 0.0196802);
+    --shadow-black-bg: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
 
     --bg-button-primary: tomato
     --bg-button-primary--hover: tomato
@@ -46,11 +48,13 @@ html
     &:hover
         background-image: var(--bg-button-primary--hover)
         transition: all 0.2s
+        color: #fff
         box-shadow: none
         transform: translateY(0px)
     &:focus
         background-image: var(--bg-button-primary--hover)
         transition: all 0.2s
+        color: #fff
         box-shadow: none
         transform: translateY(0px)
 @mixin buttonSecondary
@@ -162,6 +166,7 @@ body
     text-align: center
     margin-bottom: 50px
     font-weight: 600
+    margin-top: 50px
 .demo
     @include section()
     background-color: var(--c-accent)
@@ -183,10 +188,36 @@ body
             width: 100%
         &--not-released
             opacity: 0.3
+        &__default
+            margin-top: 20px
+            text-align: center
+            opacity: 0.5
     &-pop
         border-radius: 12px
         border: 12px solid #fff
 
+.animations
+    @include section()
+    // background-color: var(--c-accent-light)
+.position 
+    @include section()
+    background-color: var(--c-accent-light)
+
+.methods
+    @include section()
+    &__title
+        @include sectionTitle()
+    .demo-card
+        box-shadow: var(--shadow-black-bg)
+        text-align: center
+        padding-top: 40px
+        padding-bottom: 40px
+
+.closers
+    @include section()
+    background-color: var(--c-accent)
+    &__title
+        @include sectionTitle()
 
 .code
     border-radius: 12px
