@@ -27,13 +27,11 @@ function openPop( $pop, $onOpen = null) {
 		$pop.classList.add(popOpenedClass);
 	} else if ( typeof $pop == 'string' ) {
 		document.querySelector($pop + '-wrapper').classList.add(popWrapperOenedClass)
-		document.querySelector($pop).classList.add(popOpenedClass);
 	} else {
 		console.log('not valid vrgument type')
 	}
 
 
-	document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass);
 	if ($onOpen != null) {
 		$onOpen();
 	}
@@ -59,7 +57,6 @@ function closePop( $pop, $onClose = null) {
 		console.log('not valid vrgument type')
 	}
 
-	document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
 	if ($onClose != null) {
 		$onClose();
 	}
@@ -79,6 +76,7 @@ function closePopByOutsideClick($) {
 				let pop = document.querySelector($.pop);
 				let onClose = $.onClose;
 				closePop( pop, onClose );
+				document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
 			}
 		})
 	}
@@ -91,13 +89,18 @@ function closePopByOutsideClick($) {
  * @param {function} $onOpen callback on open
  * @param {function} $onClose  callback on close
  */
-function popToggle($pop, $onOpen, $onClose){
-	let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
+// function popToggle($pop, $onOpen, $onClose){
+function popToggle($){
+	let popWrap = document.querySelector('.' + $.pop.classList[0] + '-wrapper');
 	let	isPopHidden = window.getComputedStyle(popWrap).getPropertyValue('visibility') == 'hidden';
-	let pop = $pop;
-	isPopHidden
-		? openPop( pop, $onOpen)
-		: closePop( pop, $onClose)
+	// let pop = $.pop;
+	if (isPopHidden) {
+		openPop( $.pop, $.onOpen)
+			document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass);
+	} else {
+		closePop( $.pop, $.onClose)
+		document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
+	}
 }
 
 
@@ -271,7 +274,13 @@ function poppa( $ ){
 		// let opener = document.querySelector($.clickTrigger);
 		const opener = [...document.querySelectorAll($.clickTrigger)];
 		opener.map(trigger => {
-			trigger.addEventListener("click", function() { popToggle( pop, $.onOpen, $.onClose );
+			trigger.addEventListener("click", function() {
+				popToggle({
+					pop: pop,
+					onOpen: $.onOpen,
+					onClose: $.onClose,
+				});
+			// } pop, $.onOpen, $.onClose );
 
 			})
 		});

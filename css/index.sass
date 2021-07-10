@@ -45,6 +45,7 @@ html
     border-radius: 12px
     transition: all 0.2s
     transform: translateY(-3px)
+    display: inline-block
     &:hover
         background-image: var(--bg-button-primary--hover)
         transition: all 0.2s
@@ -224,6 +225,7 @@ body
     background: #000
     color: #fff
     padding: 40px
+    user-select: all
     &-row
         display: block
         padding-left: 30px
@@ -233,6 +235,8 @@ body
         color: var(--c-code-string)
     &__parameter
         color: var(--c-code-new)
+    &__number
+        color: var(--c-accent)
 
 // __FORM
 .form

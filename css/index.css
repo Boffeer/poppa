@@ -178,6 +178,7 @@ body {
   transition: all 0.2s;
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
+  display: inline-block;
 }
 
 .hero-buttons__get:hover {
@@ -365,6 +366,10 @@ body {
   background: #000;
   color: #fff;
   padding: 40px;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
 }
 
 .code-row {
@@ -382,6 +387,10 @@ body {
 
 .code__parameter {
   color: var(--c-code-new);
+}
+
+.code__number {
+  color: var(--c-accent);
 }
 
 .form-privacy {

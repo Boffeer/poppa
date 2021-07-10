@@ -14,7 +14,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<header class="header">
+	<!-- <header class="header">
 		<div class="container">
 			<div class="header-wrapper">
 				<nav class="header-wrapper-nav">
@@ -24,11 +24,11 @@
 				<button class="header-wrapper__download">Download PoppaJS</button>
 			</div>
 		</div>
-	</header>
+	</header> -->
 
 	<section class="hero">
-		<h1 class="hero__title">Poppa</h1>
-		<p class="hero__desc">Vanilla JS easy to use popup library</p>
+		<h1 class="hero__title">Poppa Popups</h1>
+		<p class="hero__desc">Easy to use Vanilla JS popup library</p>
 		<div class="hero-buttons">
 			<a href="https://github.com/Boffeer/poppa" class="hero-buttons__get">Get Poppa</a>
 			<a href="#demo" class="hero-buttons__demo">Demo</a>
@@ -149,7 +149,7 @@
 	<section class="closers">
 		<div class="container">
 			<h2 class="demo__title">Closers</h2>
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-md-4 col-lg-3 col-xl-4">
 					<article class="demo-card">
 						<button class="demo-card__button demo-card__button--closer-none">none</button>
@@ -245,9 +245,8 @@
 			</div>
 		</div>
 	</section>
-
-
 	<div class="poppa-pops">
+		<!-- ANIMATIONS -->
 		<div class="demo-zoom-in demo-pop">
 			<div class="code">
 				<p>
@@ -261,6 +260,10 @@
 							<span class="code__parameter">clickTrigger</span>:
 							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
 						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'zoom-in'</span>,
+						</span>
 					})
 				</p>
 			</div>
@@ -273,11 +276,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.demo-zoom-out'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.demo-card__button--zoom-out'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'zoom-out'</span>,
 						</span>
 					})
 				</p>
@@ -291,11 +298,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.demo-slide-up'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.demo-card__button--slide-up'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'slide-up'</span>,
 						</span>
 					})
 				</p>
@@ -308,11 +319,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.demo-slide-down'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.demo-card__button--slide-down'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'slide-down'</span>,
 						</span>
 					})
 				</p>
@@ -325,11 +340,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.demo-slide-left'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.demo-card__button--slide-left'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'slide-left'</span>,
 						</span>
 					})
 				</p>
@@ -342,17 +361,21 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.demo-slide-right'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.demo-card__button--slide-right'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'slide-right'</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
-
+		<!-- /ANIMATIONS -->
 		<!-- POSITION -->
 		<div class="demo-position-top-left demo-pop">
 			<div class="code">
@@ -361,11 +384,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'top left'</span>,
 						</span>
 					})
 				</p>
@@ -378,17 +405,20 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'top'</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
-
 		<div class="demo-position-top-right demo-pop">
 			<div class="code">
 				<p>
@@ -396,11 +426,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'top right'</span>,
 						</span>
 					})
 				</p>
@@ -413,11 +447,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'left'</span>,
 						</span>
 					})
 				</p>
@@ -430,17 +468,16 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
-
 		<div class="demo-position-right demo-pop">
 			<div class="code">
 				<p>
@@ -448,17 +485,20 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'right'</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
-
 		<div class="demo-position-bottom-left demo-pop">
 			<div class="code">
 				<p>
@@ -466,11 +506,15 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'bottom left'</span>,
 						</span>
 					})
 				</p>
@@ -483,17 +527,20 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'bottom'</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
-
 		<div class="demo-position-bottom-right demo-pop">
 			<div class="code">
 				<p>
@@ -501,18 +548,23 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.your-pop'</span>,
 						</span>
 						<span class="code-row">
 							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__string"> '.your__button'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">position</span>:
+							<span class="code__string"> 'bottom right'</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
+		<!-- /POSITION -->
 
-
+		<!-- TIMER -->
 		<div class="demo-timer demo-pop">
 			<div class="code">
 				<p>After 30 seconds this popup appears</p>
@@ -522,143 +574,21 @@
 					({
 						<span class="code-row">
 							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
+							<span class="code__string"> '.demo-timer'</span>,
 						</span>
 						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
+							<span class="code__parameter">timerTrigger</span>:
+							<span class="code__number"> 30</span>,
 						</span>
 					})
 				</p>
 			</div>
 		</div>
-
+		<!-- /TIMER -->
 	</div>
 
 
 	<script src="assets/poppa/poppa.js"></script>
-	<script>
-
-		// Animations
-		poppa({
-			clickTrigger: '.demo-card__button--zoom-in',
-			pop: '.demo-zoom-in',
-			animation: 'zoom-in',
-			customPopWrapperClass: 'custom-pop-wrapper-class',
-			customPopAlignerClass: 'custom-pop-aligner-class',
-			customPopCloserClass: 'custom-pop-closer-class',
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--zoom-out',
-			pop: '.demo-zoom-out',
-			animation: 'zoom-out'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--slide-up',
-			pop: '.demo-slide-up',
-			animation: 'slide-up'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--slide-down',
-			pop: '.demo-slide-down',
-			animation: 'slide-down'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--slide-left',
-			pop: '.demo-slide-left',
-			animation: 'slide-left'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--slide-right',
-			pop: '.demo-slide-right',
-			animation: 'slide-right',
-		});
-
-		// Position
-
-
-		poppa({
-			clickTrigger: '.demo-card__button--position-top-left',
-			pop: '.demo-position-top-left',
-			animation: 'slide-right',
-			position: 'top left'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-top',
-			pop: '.demo-position-top',
-			animation: 'slide-down',
-			position: 'top'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-top-right',
-			pop: '.demo-position-top-right',
-			animation: 'slide-left',
-			position: 'top right'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-left',
-			pop: '.demo-position-left',
-			animation: 'slide-right',
-			position: 'left'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-center',
-			pop: '.demo-position-center',
-			animation: 'zoom-in',
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-right',
-			pop: '.demo-position-right',
-			animation: 'slide-left',
-			position: 'right'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-bottom-left',
-			pop: '.demo-position-bottom-left',
-			animation: 'slide-right',
-			position: 'bottom left'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-bottom',
-			pop: '.demo-position-bottom',
-			animation: 'slide-up',
-			position: 'bottom'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--position-bottom-right',
-			pop: '.demo-position-bottom-right',
-			animation: 'slide-left',
-			position: 'bottom right'
-		});
-
-		// Closers
-		poppa({
-			clickTrigger: '.demo-card__button--closer-none',
-			pop: '.demo-closer-none',
-			closerType: 'none'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--closer-outer',
-			pop: '.demo-closer-outer',
-			closerType: 'outer'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--closer-inner',
-			pop: '.demo-closer-inner',
-			closerType: 'inner'
-		});
-		poppa({
-			clickTrigger: '.demo-card__button--closer-corner',
-			pop: '.demo-closer-corner',
-			closerType: 'corner',
-		});
-
-		poppa({
-			clickTrigger: '.demo-timer',
-			pop: '.demo-timer',
-			timerTrigger: 30,
-		});
-
-	</script>
+	<script src="js/index.js"></script>
 </body>
 </html>
