@@ -1,9 +1,10 @@
-# POPPA.JS
+# Poppa Popups
 
 ## Files to use
 
 1. `assets/poppa.min.css`
 2. `assets/poppa.js`
+
 
 ## TODOS
 - [ ] implement babel to current bundle
@@ -19,6 +20,12 @@
 - [ ] Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
 - [ ] make custom events like poppaOpened and poppaClosed
 - [ ] make zoom-pong animation. scale 0,1.2,1
+- [ ] Remove unused code
+- [ ] Remove unused todos
+- [ ] for animation duration parameter use css variable
+
+
+
 
 
 ## Basic usage
@@ -51,7 +58,6 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | closeType         | string            | inner/outer/none/corner |
 | outOfPopClickClose | bool              | true          |
 | timerTrigger      | number in seconds | 30            |
-| not released | parameters | beneah |
 
 ## Planning parameters
 
@@ -83,5 +89,8 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 
 ### How to set more click triggers?
 ```js
-document.querySelector('.additional-clicktrigger').addEventListener('click', function (){openPop('.my-pop')})
+document.querySelector('.additional-clicktrigger')
+	.addEventListener('click', function () {
+		openPop('.my-pop')
+	});
 ```
