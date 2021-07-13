@@ -6,26 +6,6 @@
 2. `assets/poppa.js`
 
 
-## TODOS
-- [ ] implement babel to current bundle
-- [ ] make array checker to clickTrigger parameter to open one modal from plenty buttons
-- [ ] make object syntax a kindof `const myPop = new Poppa({})`
-	- I want to have an opportunity to call click triggers array or pop element myPop.pop and get html element wich I setup at Poppa and other parameters
-	- To have an opportunity to change my parameters
-- [ ] Change public name to poppa popups
-- [ ] Узнай влияет ли на пейджспид твоя либа
-	- [ ] Влияние на куммулятив леяут шифт
-- [ ] Make function depop() — destroy pop wrapper and return popo to origin
-- [ ] Make function to remove all poppa-pops-hider — the container to store pops and avoid layout shift
-- [ ] Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
-- [ ] make custom events like poppaOpened and poppaClosed
-- [ ] make zoom-pong animation. scale 0,1.2,1
-- [ ] Remove unused code
-- [ ] Remove unused todos
-- [ ] for animation duration parameter use css variable
-
-
-
 
 
 ## Basic usage
@@ -45,7 +25,7 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | Parameter         | Value             | example       |
 | ----------------- | ----------------- | ------------- |
 | pop               | css class string  | '.your-pop'   |
-| clickTrigger      | css class string  | '.my-button'  |
+| clickTrigger      | css class string or array of them | '.my-button'  |
 | onOpen            | function name     | doSomething      |
 | onClose           | function name     | doSomething      |
 | animation         | string            | 'zoom-in', 'slide-up-down-left-right', 'zoom-out',            |
@@ -58,6 +38,8 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | closeType         | string            | inner/outer/none/corner |
 | outOfPopClickClose | bool              | true          |
 | timerTrigger      | number in seconds | 30            |
+| onLeavingTrigger      | bool | false            |
+| onLeavingDelay      | number in seconds | 30            |
 
 ## Planning parameters
 
@@ -94,3 +76,21 @@ document.querySelector('.additional-clicktrigger')
 		openPop('.my-pop')
 	});
 ```
+---
+
+## TODOS
+- [ ] implement babel to current bundle
+- [ ] make object syntax a kindof `const myPop = new Poppa({})` [this how it works] (https://learn.javascript.ru/new-function)
+	- I want to have an opportunity to call click triggers array or pop element myPop.pop and get html element wich I setup at Poppa and other parameters
+	- To have an opportunity to change my parameters
+- [ ] Узнай влияет ли на пейджспид твоя либа
+	- [ ] Влияние на куммулятив леяут шифт
+- [ ] Make function depop() — destroy pop wrapper and return popo to origin
+- [ ] Make function to remove all poppa-pops-hider — the container to store pops and avoid layout shift
+- [ ] Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
+- [ ] make custom events like poppaOpened and poppaClosed
+- [ ] for animation duration parameter use css variable
+- [ ] Сделай параметр для счета количества открытия попапов вместо тру фолс
+- [ ] [Сделай собития poppaOpened и poppaClosed](https://learn.javascript.ru/dispatch-events)
+
+

@@ -6,7 +6,10 @@ html
 // .poppa-html--opened
 .poppa-block-scrolling
 	overflow: hidden
-	padding-right: 17px
+
+@media (min-width: 1200px)
+	.poppa-block-scrolling
+		padding-right: 17px
 
 @media (min-width: 1400px) and (max-width: 1500px)
 	.poppa-block-scrolling
@@ -42,6 +45,7 @@ html
 	margin: 0 auto
 	width: 100%
 	height: 100%
+	padding: 30px
 
 .poppa-aligner--left
 	justify-content: flex-start
@@ -115,6 +119,24 @@ html
 
 .poppa--zoom-out
 	transform: scale(2.2)
+
+.poppa--zoom-out.poppa--opened
+	transform: scale(1)
+
+.poppa--zoom-pong
+	transform: scale(0.5)
+@keyframes zoom-pong
+	30%
+		transform: scale(1.4)
+	60%
+		transform: scale(0.9)
+	100%
+		transform: scale(1)
+
+		
+.poppa--zoom-pong.poppa--opened
+	animation: zoom-pong 0.5s!important
+	transform: scale(1)
 
 .poppa--zoom-out.poppa--opened
 	transform: scale(1)

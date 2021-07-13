@@ -2,7 +2,7 @@ let popClass = 'poppa';
 let popOpenedClass = 'poppa--opened'
 
 let popWrapperClass = 'poppa-wrapper';
-let popWrapperOenedClass = 'poppa-wrapper--opened';
+let popWrapperOpenedClass = 'poppa-wrapper--opened';
 
 let poppaAlignerClass = 'poppa-aligner';
 
@@ -20,13 +20,13 @@ let poppaScrollBlockerClass = 'poppa-block-scrolling';
  * @param {function} $onOpen function on open
  */
 
-function openPop( $pop, $onOpen = null) {
+function openPop( $pop, $onOpen = null ) {
 	if ( typeof $pop == 'object' ) {
 		let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
-		popWrap.classList.add(popWrapperOenedClass)
+		popWrap.classList.add(popWrapperOpenedClass)
 		$pop.classList.add(popOpenedClass);
 	} else if ( typeof $pop == 'string' ) {
-		document.querySelector($pop + '-wrapper').classList.add(popWrapperOenedClass)
+		document.querySelector($pop + '-wrapper').classList.add(popWrapperOpenedClass)
 	} else {
 		console.log('not valid vrgument type')
 	}
@@ -48,10 +48,10 @@ function openPop( $pop, $onOpen = null) {
 function closePop( $pop, $onClose = null) {
 	if ( typeof $pop == 'object' ) {
 		let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
-		popWrap.classList.remove(popWrapperOenedClass)
+		popWrap.classList.remove(popWrapperOpenedClass)
 		$pop.classList.remove(popOpenedClass);
 	} else if ( typeof $pop == 'string' ) {
-		document.querySelector($pop + '-wrapper').classList.remove(popWrapperOenedClass)
+		document.querySelector($pop + '-wrapper').classList.remove(popWrapperOpenedClass)
 		document.querySelector($pop).classList.remove(popOpenedClass);
 	} else {
 		console.log('not valid vrgument type')
@@ -238,40 +238,27 @@ function poppa( $ ){
 	let popWrap = document.querySelector( $.pop + '-wrapper' );
 	let pop = document.querySelector( $.pop );
 
-	if ($.clickTrigger == 'page-leaving') {
-		// while(true) {
-		//     if (window.onbeforeunload != null) {
-		//         window.onbeforeunload = null;
-		//     }
-		// }
-		
-		
-		
-		// TODO: 
-		// Сделай параметр для счета количества открытия попапов вместо тру фолс
-		//
+	if ($.onLeavingTrigger == true) {
 		let popShown = false;
-		document.querySelector('.pop-leaving-area').addEventListener('mouseenter', function() {
-			if (popShown === false) {
-				openPop(popWrap, pop);
-				popShown = true;
-				// setTimeout(function(){
-				//     popShown = false
-				// }, 90000)
-			}
-		})
-		// document.addEventListener('mouseleave', function() {
-		//     if (popShown === false) {
-		//         openPop(popWrap, pop);
-		//         popShown = true;
-		//         // setTimeout(function(){
-		//         //     popShown = false
-		//         // }, 90000)
-		//     }
-		// })
+		let onLeavingDelay;
+		if ($.onLeavingDelay) {
+			onLeavingDelay = 5000
+		} else {
+			onLeavingDelay = $.onLeavingDelay * 1000;
+		}
+		setTimeout(() => {
+			document.addEventListener('mouseleave', function() {
+				if (popShown === false) {
+						openPop(pop);
+						popShown = true;
+					setTimeout(function(){
+						popShown = false
+					}, 120000)
+				}
+			})
+		}, 5000)
 
 	} else {
-		// let opener = document.querySelector($.clickTrigger);
 		const opener = [...document.querySelectorAll($.clickTrigger)];
 		opener.map(trigger => {
 			trigger.addEventListener("click", function() {
@@ -280,8 +267,6 @@ function poppa( $ ){
 					onOpen: $.onOpen,
 					onClose: $.onClose,
 				});
-			// } pop, $.onOpen, $.onClose );
-
 			})
 		});
 	}

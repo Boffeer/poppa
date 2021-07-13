@@ -5,7 +5,12 @@ html {
 
 .poppa-block-scrolling {
   overflow: hidden;
-  padding-right: 17px;
+}
+
+@media (min-width: 1200px) {
+  .poppa-block-scrolling {
+    padding-right: 17px;
+  }
 }
 
 @media (min-width: 1400px) and (max-width: 1500px) {
@@ -50,6 +55,7 @@ html {
   margin: 0 auto;
   width: 100%;
   height: 100%;
+  padding: 30px;
 }
 
 .poppa-aligner--left {
@@ -149,6 +155,53 @@ html {
 .poppa--zoom-out {
   -webkit-transform: scale(2.2);
           transform: scale(2.2);
+}
+
+.poppa--zoom-out.poppa--opened {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.poppa--zoom-pong {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+@-webkit-keyframes zoom-pong {
+  30% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  60% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom-pong {
+  30% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  60% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.poppa--zoom-pong.poppa--opened {
+  -webkit-animation: zoom-pong 0.5s !important;
+          animation: zoom-pong 0.5s !important;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .poppa--zoom-out.poppa--opened {

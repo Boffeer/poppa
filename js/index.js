@@ -8,6 +8,11 @@ poppa({
 	customPopCloserClass: 'custom-pop-closer-class',
 });
 poppa({
+	clickTrigger: '.demo-card__button--zoom-pong',
+	pop: '.demo-zoom-pong',
+	animation: 'zoom-pong',
+});
+poppa({
 	clickTrigger: '.demo-card__button--zoom-out',
 	pop: '.demo-zoom-out',
 	animation: 'zoom-out'

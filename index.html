@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PoppaJS | Easy to use popup library</title>
+	<title>Poppa Popups | Easy to use popup library</title>
 	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="assets/poppa/poppa.min.css">
@@ -46,6 +46,11 @@
 				<div class="col-md-4 col-lg-3 col-xl-4">
 					<article class="demo-card">
 						<button class="demo-card__button demo-card__button--zoom-out">zoom-out</button>
+					</article>
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-4">
+					<article class="demo-card">
+						<button class="demo-card__button demo-card__button--zoom-pong">zoom-pong</button>
 					</article>
 				</div>
 				<div class="col-md-4 col-lg-3 col-xl-4">
@@ -284,6 +289,27 @@
 						<span class="code-row">
 							<span class="code__parameter">animation</span>:
 							<span class="code__string"> 'zoom-out'</span>,
+						</span>
+					})
+				</p>
+			</div>
+		</div>
+		<div class="demo-zoom-pong demo-pop">
+			<div class="code">
+				<p>
+					<span class="code__function">poppa</span>
+					({
+						<span class="code-row">
+							<span class="code__parameter">pop</span>:
+							<span class="code__string"> '.demo-zoom-pong'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">clickTrigger</span>:
+							<span class="code__string"> '.demo-card__button--zoom-pong'</span>,
+						</span>
+						<span class="code-row">
+							<span class="code__parameter">animation</span>:
+							<span class="code__string"> 'zoom-pong'</span>,
 						</span>
 					})
 				</p>
