@@ -91,7 +91,6 @@ function closePopCaller($)  {
 		function destroyPop() {
 			$.savePop = document.querySelector($.poppaOverlay);
 			document.querySelector($.poppaOverlay).remove();
-			console.log($.savePop)
 			document.body.appendChild($.savePop)
 		}
 		closePop( $.pop, destroyPop);
