@@ -17,7 +17,7 @@ poppa({
 })
 ```
 
-Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-class'` with renederd wrapper and button to close this popup
+Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-class'` with renederd overlay and button to close this popup
 
 
 ## Parameters
@@ -30,9 +30,9 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | onClose           | function name     | doSomething      |
 | animation         | string            | 'zoom-in', 'slide-up-down-left-right', 'zoom-out',            |
 | popAlignerCustomClass | string        | 'myAlignerClass' |
-| popWrapperCustomClass | string        | 'myWrapperClass' |
+| popOverlayCustomClass | string        | 'myOverlayClass' |
 | position          | string            | 'top right'   |
-| customPopWrapperClass | string | '.my-pop-wrapper-class' |
+| customPopOverlayClass | string | '.my-pop-overlay-class' |
 | customPopAlignerClass | string | '.my-pop-aligner-class' |
 | customPopCloserClass | string | '.my-pop-closer-class' |
 | closeType         | string            | inner/outer/none/corner |
@@ -40,6 +40,8 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | timerTrigger      | number in seconds | 30            |
 | onLeavingTrigger      | bool | false            |
 | onLeavingDelay      | number in seconds | 30            |
+| escCloser      | bool | true            |
+| openedByDefault   | bool              | false          |
 
 ## Planning parameters
 
@@ -48,7 +50,6 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | beforeOpen        | function name     | doSomething   |
 | beforeClose       | function name     | doSomething   |
 | openByScrollTo    | css class string  | '.features'   |
-| activeByDefault   | bool              | true          |
 | saveAndDestroy    | bool              | true          |
 | destroyOnClose    | bool              | true          |
 | popType           | string            | pop/snackbar/burger |
@@ -56,6 +57,7 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | pageLeaveTrigger  | bool              | false         |
 | closeIcon         | string            | url or text   |
 | zIndexModifier  | string            | number        |
+| blocksToRemoveOnReady      | '.your-wrapper-block-1,.your-wrapper-block-2' | true            |
 
 
 ## Functions
@@ -63,7 +65,8 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | Function                                      | is released |
 | --------------------------------------------- | ----------- |
 | `openPop('.my-pop', function)`                | - [x]       |
-`closePop('.my-pop', function)`                 | - [x]       |
+| `closePop('.my-pop', function)`                 | - [x]       |
+| `closeAllPops()`                 | - [x]       |
 | `additionalClickTrigger('.my-pop', function)` | - [ ]       |
 
 
@@ -85,7 +88,7 @@ document.querySelector('.additional-clicktrigger')
 	- To have an opportunity to change my parameters
 - [ ] Узнай влияет ли на пейджспид твоя либа
 	- [ ] Влияние на куммулятив леяут шифт
-- [ ] Make function depop() — destroy pop wrapper and return popo to origin
+- [ ] Make function depop() — destroy pop overlay and return popo to origin
 - [ ] Make function to remove all poppa-pops-hider — the container to store pops and avoid layout shift
 - [ ] Протяни пропсы как в реакте, чтобы на любом уровне вложенности ты имел одинаковые исходные данные
 - [ ] make custom events like poppaOpened and poppaClosed

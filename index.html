@@ -34,6 +34,19 @@
 			<a href="#demo" class="hero-buttons__demo">Demo</a>
 		</div>
 	</section>
+	<section class="how">
+		<h2 class="how__title">How it works</h2>
+		<button class="how__activator">Let's create a popup!</button>
+		<div class="how-pop">
+			<h1 class="how-pop__title">h1 This is the block with no styles</h1>
+			<h2 class="how-pop__title">h2 Just click the button above</h2>
+			<h3 class="how-pop__title">h3 To make popup</h3>
+			<h4 class="how-pop__title">h4 It automaticaly gets sexy text styles</h4>
+			<h5 class="how-pop__title">h5 And all you need to make popup just call the function</h5>
+			<h6 class="how-pop__title">h6 poppa() with arguments as at examples below. Dont forget <span class="how-pop__em text-select">coolText:&nbsp;true</span> argument to use such text styles for simple information popups</h6>
+			<p class="how-pop__desc">p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quidem? Placeat, nam delectus? Placeat error vel nostrum ipsum officia consectetur asperiores quos rerum? Aliquam cupiditate porro id sint, exercitationem fugit!</p>
+		</div>
+	</section>
 	<section class="demo" id="demo">
 		<div class="container">
 			<h2 class="demo__title">Animations</h2>
@@ -137,12 +150,17 @@
 			<div class="row">
 				<div class="col-md-6 col-lg-6 col-xl-6">
 					<article class="demo-card">
-						<p> openPop('.my-pop',function); </p>
+						<p> openPop('.my-pop',onOpenFunction); </p>
 					</article>
 				</div>
 				<div class="col-md-6 col-lg-6 col-xl-6">
 					<article class="demo-card">
-						<p> closePop('.my-pop',function); </p>
+						<p> closePop('.my-pop', onCloseFunction); </p>
+					</article>
+				</div>
+				<div class="col-md-6 col-lg-6 col-xl-6">
+					<article class="demo-card">
+						<p> closeAllPops(); </p>
 					</article>
 				</div>
 			</div>

@@ -194,6 +194,7 @@ body
             text-align: center
             opacity: 0.5
     &-pop
+        padding: 0
         border-radius: 12px
         border: 12px solid #fff
 
@@ -277,6 +278,22 @@ body
     left: 0
 
 
+.how
+    background-color: #f8f8f8
+    @include section()
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    &__title
+        @include sectionTitle()
+    &__activator
+        @include buttonPrimary
+        margin-bottom: 40px
+    &-pop
+        &__em
+            background-color: var(--c-accent)
+
 // __POPS
 .popups
     display: none
@@ -285,3 +302,6 @@ body
     padding: 40px 20px
     background-color: #fff
     border-radius: 12px
+
+.text-select
+    user-select: all

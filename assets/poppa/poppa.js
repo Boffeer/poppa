@@ -1,8 +1,8 @@
-let popClass = 'poppa';
-let popOpenedClass = 'poppa--opened'
+let poppaClass = 'poppa';
+let poppaOpenedClass = 'poppa--opened'
 
-let popWrapperClass = 'poppa-wrapper';
-let popWrapperOpenedClass = 'poppa-wrapper--opened';
+let poppaOverlayClass = 'poppa-overlay';
+let poppaOverlayOpenedClass = 'poppa-overlay--opened';
 
 let poppaAlignerClass = 'poppa-aligner';
 
@@ -22,11 +22,11 @@ let poppaScrollBlockerClass = 'poppa-block-scrolling';
 
 function openPop( $pop, $onOpen = null ) {
 	if ( typeof $pop == 'object' ) {
-		let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
-		popWrap.classList.add(popWrapperOpenedClass)
-		$pop.classList.add(popOpenedClass);
+		let poppaOverlay = document.querySelector('.' + $pop.classList[0] + '-overlay');
+		poppaOverlay.classList.add(poppaOverlayOpenedClass)
+		$pop.classList.add(poppaOpenedClass);
 	} else if ( typeof $pop == 'string' ) {
-		document.querySelector($pop + '-wrapper').classList.add(popWrapperOpenedClass)
+		document.querySelector($pop + '-overlay').classList.add(poppaOverlayOpenedClass)
 	} else {
 		console.log('not valid vrgument type')
 	}
@@ -47,12 +47,12 @@ function openPop( $pop, $onOpen = null ) {
  */
 function closePop( $pop, $onClose = null) {
 	if ( typeof $pop == 'object' ) {
-		let popWrap = document.querySelector('.' + $pop.classList[0] + '-wrapper');
-		popWrap.classList.remove(popWrapperOpenedClass)
-		$pop.classList.remove(popOpenedClass);
+		let poppaOverlay = document.querySelector('.' + $pop.classList[0] + '-overlay');
+		poppaOverlay.classList.remove(poppaOverlayOpenedClass)
+		$pop.classList.remove(poppaOpenedClass);
 	} else if ( typeof $pop == 'string' ) {
-		document.querySelector($pop + '-wrapper').classList.remove(popWrapperOpenedClass)
-		document.querySelector($pop).classList.remove(popOpenedClass);
+		document.querySelector($pop + '-overlay').classList.remove(poppaOverlayOpenedClass)
+		document.querySelector($pop).classList.remove(poppaOpenedClass);
 	} else {
 		console.log('not valid vrgument type')
 	}
@@ -70,12 +70,13 @@ function closePop( $pop, $onClose = null) {
  */
 function closePopByOutsideClick($) {
 	if ($.outOfPopClickClose !== false) {
-		document.querySelector($.popWrap).addEventListener('click', function(event) {
+		document.querySelector($.poppaOverlay).addEventListener('click', function(event) {
 			/* Normally - event.tagert.class[0] on click outside the pop === 'pop-aligner' */
 			if (event.target.classList[0] === poppaAlignerClass) {
 				let pop = document.querySelector($.pop);
 				let onClose = $.onClose;
-				closePop( pop, onClose );
+				// closePop( pop, onClose );
+				closePopCaller($);
 				document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
 			}
 		})
@@ -83,6 +84,20 @@ function closePopByOutsideClick($) {
 }
 
 
+function closePopCaller($)  {
+	if ( $.destroyOnClose != true ) {
+		closePop( $.pop, $.onClose)
+	} else {
+		function destroyPop() {
+			$.savePop = document.querySelector($.poppaOverlay);
+			document.querySelector($.poppaOverlay).remove();
+			console.log($.savePop)
+			document.body.appendChild($.savePop)
+		}
+		closePop( $.pop, destroyPop);
+	}
+
+}
 /**
  * 
  * @param {object} $pop querySelecotr for pop
@@ -91,14 +106,14 @@ function closePopByOutsideClick($) {
  */
 // function popToggle($pop, $onOpen, $onClose){
 function popToggle($){
-	let popWrap = document.querySelector('.' + $.pop.classList[0] + '-wrapper');
-	let	isPopHidden = window.getComputedStyle(popWrap).getPropertyValue('visibility') == 'hidden';
+	let poppaOverlay = document.querySelector('.' + $.pop.classList[0] + '-overlay');
+	let	isPopHidden = window.getComputedStyle(poppaOverlay).getPropertyValue('visibility') == 'hidden';
 	// let pop = $.pop;
 	if (isPopHidden) {
 		openPop( $.pop, $.onOpen)
 			document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass);
 	} else {
-		closePop( $.pop, $.onClose)
+		closePopCaller($);
 		document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
 	}
 }
@@ -106,38 +121,38 @@ function popToggle($){
 
 /**
  * 
- * @param {} $popWrap 
+ * @param {} $poppaOverlay 
  * @param {*} $pop 
  */
-function popaAddClasses($popWrap, $pop) {
-	if ($popWrap != null || $popWrap != undefined) {
-		( !$popWrap.classList.contains(popWrapperClass) )
-			? $popWrap.classList.add(popWrapperClass)
+function popaAddClasses($poppaOverlay, $pop) {
+	if ($poppaOverlay != null || $poppaOverlay != undefined) {
+		( !$poppaOverlay.classList.contains(poppaOverlayClass) )
+			? $poppaOverlay.classList.add(poppaOverlayClass)
 			: false ;
 	}
 	if ($pop != null || $pop != undefined) {
-		( !$pop.classList.contains(popClass) )
-			? $pop.classList.add(popClass)
+		( !$pop.classList.contains(poppaClass) )
+			? $pop.classList.add(poppaClass)
 			: false ;
 	}
 }
 
 
-function createPopStructure($) {
 
-	/* === Create main wrapper === */
-	let jsPopWrapper = document.createElement('div');
-	jsPopWrapper;
-	jsPopWrapper.classList.add($.popWrap.replace('.', ''));
-	jsPopWrapper.classList.add(popWrapperClass);
-	typeof($.customPopWrapperClass) == 'string'
-		? jsPopWrapper.classList.add($.customPopWrapperClass) 
+function createPopStructure($) {
+	/* === Create main overlay j== */
+	let jsPoppaOverlay = document.createElement('div');
+	jsPoppaOverlay;
+	jsPoppaOverlay.classList.add($.poppaOverlay.replace('.', ''));
+	jsPoppaOverlay.classList.add(poppaOverlayClass);
+	typeof($.customPopOverlayClass) == 'string'
+		? jsPoppaOverlay.classList.add($.customPopOverlayClass) 
 		: false
 	
-	document.querySelector('body').appendChild(jsPopWrapper);
+	document.querySelector('body').appendChild(jsPoppaOverlay);
 
-	if ($.popWrapperCustomClass) {
-		jsPopAlingner.classList.add(popWrapperCustomClass);
+	if ($.poppaOverlayCustomClass) {
+		jsPopAlingner.classList.add(poppaOverlayCustomClass);
 	}
 
 	let jsPopAlingner = document.createElement('div');
@@ -146,7 +161,7 @@ function createPopStructure($) {
 	typeof($.customPopAlignerClass) == 'string'
 		? jsPopAlingner.classList.add($.customPopAlignerClass)
 		: false
-	jsPopWrapper.appendChild(jsPopAlingner);
+	jsPoppaOverlay.appendChild(jsPopAlingner);
 
 	if ($.position) {
 		console.log($.position)
@@ -170,13 +185,17 @@ function createPopStructure($) {
 	if ($.popAlignerCustomClass) {
 		jsPopAlingner.classList.add(popAlignerCustomClass);
 	}
-	/* === /Create main wrapper === */
+	/* === /Create main overlay === */
 
 
 	let jsPopCloser = document.createElement('button');
 	let closerCounter = 0;
 	jsPopCloser;
 	jsPopCloser.innerText = '×';
+	jsPopCloser.addEventListener('click', function() {
+		document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
+		closePopCaller($);
+	})
 
 	if ($.popCloser != undefined) {
 		jsPopCloser.classList.add($.popCloser.replace('.', ''));
@@ -191,7 +210,10 @@ function createPopStructure($) {
 	let pop = document.querySelector($.pop)
 	jsPopAlingner.appendChild(pop);
 	// console.log('Now pop inside aligner');
-	pop.classList.add(popClass);
+	pop.classList.add(poppaClass);
+	$.coolText == true
+		? pop.classList.add('poppa--simple-text')
+		: false
 	// console.log('pop created');
 
 	/* === none closer ====  */
@@ -224,18 +246,20 @@ function createPopStructure($) {
 }
 
 
-
+function closeAllPops() {
+	let allPops = [...document.querySelectorAll('.poppa')];
+	allPops.map(pop => {
+		closePop(pop);
+	});
+}
 
 function poppa( $ ){
-	// let opener = [...document.querySelectorAll(data.clickTrigger)];
-	// let closer = [...document.querySelectorAll(data.popCloser)];
 	let popaData = $;
-	$.popWrap = $.pop + '-wrapper';
+	$.poppaOverlay = $.pop + '-overlay';
 
 	createPopStructure(popaData);
 
-	// let popWrap = document.querySelector( $.popWrap );
-	let popWrap = document.querySelector( $.pop + '-wrapper' );
+	let poppaOverlay = document.querySelector( $.pop + '-overlay' );
 	let pop = document.querySelector( $.pop );
 
 	if ($.onLeavingTrigger == true) {
@@ -273,13 +297,13 @@ function poppa( $ ){
 
 	let closer;
 	if (closer == undefined) {
-		closer = popWrap.querySelector('.' + poppaCloserClass);
+		closer = poppaOverlay.querySelector('.' + poppaCloserClass);
 	} else {
-		closer = popWrap.querySelector( $.popCloser );
+		closer = poppaOverlay.querySelector( $.popCloser );
 	}
 
 	
-	popWrap.removeAttribute('hidden');
+	poppaOverlay.removeAttribute('hidden');
 
 	if ($.animation) {
 		pop.classList.add( 'poppa--' + $.animation );
@@ -287,7 +311,10 @@ function poppa( $ ){
 		pop.classList.add( 'poppa--zoom-in' );
 	}
 	
-	closer.addEventListener('click', function() {closePop( pop, $.onClose )});
+	closer.addEventListener('click', function() {
+		closePop( pop, $.onClose )
+	});
+
 	closePopByOutsideClick(popaData);
 
 	if ($.timerTrigger != null) {
@@ -297,6 +324,21 @@ function poppa( $ ){
 			}, $.timerTrigger * 1000)
 		}
 	}
-	// opener.map(mapped => mapped.addEventListener("click", () => popToggle(data.popWrap, data.pop)));
-	// closer.map(mapped => mapped.addEventListener('click', () => closePop(data.popWrap, data.pop)));
+
+	if ( $.escCloser != false ) {
+		document.addEventListener('keyup', function (evt) {
+            if (evt.keyCode === 27) {
+				closePop($.pop);
+				document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
+            }
+        });
+	}
+
+	if ( $.openedByDefault == true ) {
+		openPop(pop);
+		document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass)
+	}
+
+	// opener.map(mapped => mapped.addEventListener("click", () => popToggle(data.poppaOverlay, data.pop)));
+	// closer.map(mapped => mapped.addEventListener('click', () => closePop(data.poppaOverlay, data.pop)));
 }

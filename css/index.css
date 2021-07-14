@@ -311,6 +311,7 @@ body {
 }
 
 .demo-pop {
+  padding: 0;
   border-radius: 12px;
   border: 12px solid #fff;
 }
@@ -447,6 +448,80 @@ body {
   left: 0;
 }
 
+.how {
+  background-color: #f8f8f8;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.how__title {
+  font-size: var(--fz-title-section);
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.how__activator {
+  background-color: var(--c-accent);
+  border: 2px solid var(--c-accent);
+  color: var(--c-text-regular);
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 40px;
+  padding-left: 40px;
+  -webkit-box-shadow: var(--shadow-button);
+          box-shadow: var(--shadow-button);
+  border-radius: 12px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.how__activator:hover {
+  background-image: var(--bg-button-primary--hover);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.how__activator:focus {
+  background-image: var(--bg-button-primary--hover);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.how-pop__em {
+  background-color: var(--c-accent);
+}
+
 .popups {
   display: none;
 }
@@ -456,5 +531,12 @@ body {
   padding: 40px 20px;
   background-color: #fff;
   border-radius: 12px;
+}
+
+.text-select {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
 }
 /*# sourceMappingURL=index.css.map */

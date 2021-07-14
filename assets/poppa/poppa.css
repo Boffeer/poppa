@@ -7,7 +7,7 @@ html {
   overflow: hidden;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 781px) {
   .poppa-block-scrolling {
     padding-right: 17px;
   }
@@ -23,7 +23,7 @@ html {
   display: none;
 }
 
-.poppa-wrapper {
+.poppa-overlay {
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -37,7 +37,7 @@ html {
   z-index: 100000000;
 }
 
-.poppa-wrapper--opened {
+.poppa-overlay--opened {
   visibility: visible;
   opacity: 1;
 }
@@ -255,5 +255,33 @@ html {
 .poppa--slide-right.poppa--opened {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+}
+
+.poppa--simple-text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 40px 40px 20px 40px;
+  max-width: 600px;
+  background-color: #fff;
+}
+
+.poppa--simple-text h1,
+.poppa--simple-text h2,
+.poppa--simple-text h3,
+.poppa--simple-text h4,
+.poppa--simple-text h5,
+.poppa--simple-text h6 {
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-weight: bold;
+  line-height: 1.45;
+  color: #333333;
+}
+
+.poppa--simple-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333333;
 }
 /*# sourceMappingURL=poppa.css.map */

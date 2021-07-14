@@ -121,3 +121,19 @@ poppa({
 });
 
 
+let howActivatorCounter = 0
+document.querySelector('.how__activator').addEventListener('click', function (event) {
+	event.preventDefault();
+	howActivatorCounter++
+
+	if (howActivatorCounter < 2) {
+		this.innerText = 'Call the popup';
+
+		poppa({
+			pop: '.how-pop',
+			clickTrigger: '.how__activator',
+			coolText: true,
+		})
+	}
+
+})
