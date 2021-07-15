@@ -284,4 +284,32 @@ html {
   margin-bottom: 20px;
   color: #333333;
 }
+
+@media (max-width: 576px) {
+  .poppa--simple-text {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 20px 20px 10px 20px;
+    max-width: 600px;
+    background-color: #fff;
+  }
+  .poppa--simple-text h1,
+  .poppa--simple-text h2,
+  .poppa--simple-text h3,
+  .poppa--simple-text h4,
+  .poppa--simple-text h5,
+  .poppa--simple-text h6 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #333333;
+  }
+  .poppa--simple-text p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    color: #333333;
+  }
+}
 /*# sourceMappingURL=poppa.css.map */
