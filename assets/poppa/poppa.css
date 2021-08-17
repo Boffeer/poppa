@@ -257,6 +257,11 @@ html {
           transform: translateX(0);
 }
 
+.poppa-overlay--opened .poppa {
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
 .poppa--simple-text {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
