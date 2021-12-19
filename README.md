@@ -22,12 +22,12 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 
 ## Parameters
 
-| Parameter         | Value             | example       |
+| Parameter         | Value             | example / default       |
 | ----------------- | ----------------- | ------------- |
 | pop               | css class string  | '.your-pop'   |
 | clickTrigger      | css class string or array of them | '.my-button'  |
-| onOpen            | function name     | doSomething      |
-| onClose           | function name     | doSomething      |
+| onOpen            | function name     | doSomething() {}      |
+| onClose           | function name     | doSomething() {}      |
 | animation         | string            | 'zoom-in', 'slide-up-down-left-right', 'zoom-out',            |
 | popAlignerCustomClass | string        | 'myAlignerClass' |
 | popOverlayCustomClass | string        | 'myOverlayClass' |
@@ -35,7 +35,7 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | customPopOverlayClass | string | '.my-pop-overlay-class' |
 | customPopAlignerClass | string | '.my-pop-aligner-class' |
 | customPopCloserClass | string | '.my-pop-closer-class' |
-| closeType         | string            | inner/outer/none/corner |
+| closerType         | string            | 'inner'/'outer'/'none'/'corner' |
 | outOfPopClickClose | bool              | true          |
 | timerTrigger      | number in seconds | 30            |
 | onLeavingTrigger      | bool | false            |
@@ -43,12 +43,21 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | escCloser      | bool | true            |
 | openedByDefault   | bool              | false          |
 
-## Planning parameters
+## Functions
+
+| Function                                      | is released |
+| --------------------------------------------- | ----------- |
+| `openPop('.my-pop', function)`                | - [x]       |
+| `closePop('.my-pop', function)`                 | - [x]       |
+| `closeAllPops()`                 | - [x]       |
+| `additionalClickTrigger('.my-pop', function)` | - [ ]       |
+
+## Planning parameters, NOT RELEASED
 
 | Parameter         | Value             | example       |
 | ----------------- | ----------------- | ------------- |
-| beforeOpen        | function name     | doSomething   |
-| beforeClose       | function name     | doSomething   |
+| beforeOpen        | function name     | doSomething() {}   |
+| beforeClose       | function name     | doSomething() {}   |
 | openByScrollTo    | css class string  | '.features'   |
 | saveAndDestroy    | bool              | true          |
 | destroyOnClose    | bool              | true          |
@@ -59,15 +68,6 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | zIndexModifier  | string            | number        |
 | blocksToRemoveOnReady      | '.your-wrapper-block-1,.your-wrapper-block-2' | true            |
 
-
-## Functions
-
-| Function                                      | is released |
-| --------------------------------------------- | ----------- |
-| `openPop('.my-pop', function)`                | - [x]       |
-| `closePop('.my-pop', function)`                 | - [x]       |
-| `closeAllPops()`                 | - [x]       |
-| `additionalClickTrigger('.my-pop', function)` | - [ ]       |
 
 
 ## FAQ
@@ -95,5 +95,3 @@ document.querySelector('.additional-clicktrigger')
 - [ ] for animation duration parameter use css variable
 - [ ] Сделай параметр для счета количества открытия попапов вместо тру фолс
 - [ ] [Сделай собития poppaOpened и poppaClosed](https://learn.javascript.ru/dispatch-events)
-
-

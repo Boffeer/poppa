@@ -13,16 +13,17 @@ let poppaScrollBlockerClass = 'poppa-block-scrolling';
 
 
 /**
- * 
+ *
  * Open popup
- * 
+ *
  * @param {string} $pop className or querySelecotr
  * @param {function} $onOpen function on open
  */
 
 function openPop( $pop, $onOpen = null ) {
 	if ( typeof $pop == 'object' ) {
-		let poppaOverlay = document.querySelector('.' + $pop.classList[0] + '-overlay');
+		const popFullClass = `.${$pop.classList.value.replace(/\s/g, '.')}`;
+		let poppaOverlay = document.querySelector(popFullClass).parentElement.parentElement;
 		poppaOverlay.classList.add(poppaOverlayOpenedClass)
 		$pop.classList.add(poppaOpenedClass);
 	} else if ( typeof $pop == 'string' ) {
@@ -39,9 +40,9 @@ function openPop( $pop, $onOpen = null ) {
 
 
 /**
- * 
+ *
  * Close popup
- * 
+ *
  * @param {string} $pop className or querySelecotr
  * @param {function} $onClose function on open
  */
@@ -64,9 +65,9 @@ function closePop( $pop, $onClose = null) {
 
 
 /**
- * 
+ *
  * Helper just for main function poppa
- * @param {*} $ 
+ * @param {*} $
  */
 function closePopByOutsideClick($) {
 	if ($.outOfPopClickClose !== false) {
@@ -98,19 +99,25 @@ function closePopCaller($)  {
 
 }
 /**
- * 
+ *
  * @param {object} $pop querySelecotr for pop
  * @param {function} $onOpen callback on open
  * @param {function} $onClose  callback on close
  */
 // function popToggle($pop, $onOpen, $onClose){
-function popToggle($){
-	let poppaOverlay = document.querySelector('.' + $.pop.classList[0] + '-overlay');
+function popToggle($) {
+	// console.log($.poppaOverlay)
+	// let poppaOverlay = document.querySelector('.' + $.poppaOverlay.classList[0] + '-overlay');
+	// console.log(
+	// 	window.getComputedStyle($.poppaOverlay)
+	// )
+	let poppaOverlay = document.querySelector($.poppaOverlay)
 	let	isPopHidden = window.getComputedStyle(poppaOverlay).getPropertyValue('visibility') == 'hidden';
 	// let pop = $.pop;
 	if (isPopHidden) {
+		// console.log($.pop)
 		openPop( $.pop, $.onOpen)
-			document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass);
+		document.querySelector(poppaToScrollBlockElement).classList.add(poppaScrollBlockerClass);
 	} else {
 		closePopCaller($);
 		document.querySelector(poppaToScrollBlockElement).classList.remove(poppaScrollBlockerClass)
@@ -119,9 +126,9 @@ function popToggle($){
 
 
 /**
- * 
- * @param {} $poppaOverlay 
- * @param {*} $pop 
+ *
+ * @param {} $poppaOverlay
+ * @param {*} $pop
  */
 function popaAddClasses($poppaOverlay, $pop) {
 	if ($poppaOverlay != null || $poppaOverlay != undefined) {
@@ -145,9 +152,9 @@ function createPopStructure($) {
 	jsPoppaOverlay.classList.add($.poppaOverlay.replace('.', ''));
 	jsPoppaOverlay.classList.add(poppaOverlayClass);
 	typeof($.customPopOverlayClass) == 'string'
-		? jsPoppaOverlay.classList.add($.customPopOverlayClass) 
+		? jsPoppaOverlay.classList.add($.customPopOverlayClass)
 		: false
-	
+
 	document.querySelector('body').appendChild(jsPoppaOverlay);
 
 	if ($.poppaOverlayCustomClass) {
@@ -163,7 +170,7 @@ function createPopStructure($) {
 	jsPoppaOverlay.appendChild(jsPopAlingner);
 
 	if ($.position) {
-		console.log($.position)
+		// console.log($.position)
 		let vPosition;
 		let hPosition;
 		if ( $.position.includes('top') ) {
@@ -203,7 +210,7 @@ function createPopStructure($) {
 	typeof($.customPopCloserClass) == 'string'
 		? jsPopCloser.classList.add($.customPopCloserClass)
 		: false
-	
+
 
 
 	let pop = document.querySelector($.pop)
@@ -221,7 +228,7 @@ function createPopStructure($) {
 		pop.appendChild(jsPopCloser)
 		closerCounter = 1;
 	}
-	
+
 	/* === inner closer ====  */
 	if ( $.closerType === 'inner' ) {
 		jsPopCloser.classList.add( poppaCloserClass + '--inner' );
@@ -235,7 +242,7 @@ function createPopStructure($) {
 		pop.appendChild(jsPopCloser)
 		closerCounter = 1;
 	}
-	
+
 	/* === corner close button === */
 	if (closerCounter == 0) {
 		jsPopAlingner.appendChild(jsPopCloser);
@@ -255,6 +262,7 @@ function closeAllPops() {
 function poppa( $ ){
 	let popaData = $;
 	$.poppaOverlay = $.pop + '-overlay';
+	// console.log('poppaOverlay', $.poppaOverlay)
 
 	createPopStructure(popaData);
 
@@ -285,10 +293,12 @@ function poppa( $ ){
 		const opener = [...document.querySelectorAll($.clickTrigger)];
 		opener.map(trigger => {
 			trigger.addEventListener("click", function() {
+				// console.log($.poppaOverlay)
 				popToggle({
 					pop: pop,
 					onOpen: $.onOpen,
 					onClose: $.onClose,
+					poppaOverlay: $.poppaOverlay,
 				});
 			})
 		});
@@ -301,7 +311,7 @@ function poppa( $ ){
 		closer = poppaOverlay.querySelector( $.popCloser );
 	}
 
-	
+
 	poppaOverlay.removeAttribute('hidden');
 
 	if ($.animation) {
@@ -309,7 +319,7 @@ function poppa( $ ){
 	} else {
 		pop.classList.add( 'poppa--zoom-in' );
 	}
-	
+
 	closer.addEventListener('click', function() {
 		closePop( pop, $.onClose )
 	});

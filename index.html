@@ -1,54 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Poppa Popups | Easy to use popup library</title>
-	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="assets/poppa/poppa.min.css">
-	<link rel="stylesheet" href="css/index.min.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poppa Popups | Easy to use popup library</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="assets/poppa/poppa.min.css" />
+    <link rel="stylesheet" href="css/index.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-	<meta property="og:title" content="Poppa Popups" />
-	<meta property="og:description" content="Vanilla JS popup library" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://boffeer.github.io/poppa/" />
-	<meta property="og:image" content="https://boffeer.github.io/poppa/img/logo.svg" />
+    <meta property="og:title" content="Poppa Popups" />
+    <meta property="og:description" content="Vanilla JS popup library" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://boffeer.github.io/poppa/" />
+    <meta
+      property="og:image"
+      content="https://boffeer.github.io/poppa/img/logo.svg"
+    />
 
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./manifest/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./manifest/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./manifest/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./manifest/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./manifest/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./manifest/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./manifest/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./manifest/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./manifest/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./manifest/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./manifest/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./manifest/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./manifest/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./manifest/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffcc00" />
+    <meta
+      name="msapplication-TileImage"
+      content="./manifest/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffcc00" />
 
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffcc00">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffcc00">
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NGW4W7T");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NGW4W7T"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NGW4W7T');</script>
-	<!-- End Google Tag Manager -->
-</head>
-<body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGW4W7T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
-	<!-- <header class="header">
+    <!-- <header class="header">
 		<div class="container">
 			<div class="header-wrapper">
 				<nav class="header-wrapper-nav">
@@ -60,617 +142,697 @@
 		</div>
 	</header> -->
 
-	<section class="hero">
-		<h1 class="hero__title">Poppa Popups</h1>
-		<p class="hero__desc">
-			Easy to use Vanilla JS popup library<br />
-			Close on Esc or overlay click<br />
-			Animated
-		</p>
-		<div class="hero-buttons">
-			<a href="https://github.com/Boffeer/poppa" class="hero-buttons__get">Get Poppa</a>
-			<a href="#demo" class="hero-buttons__demo">Demo</a>
-		</div>
-	</section>
-	<section class="how">
-		<h2 class="how__title">How it works</h2>
-		<button class="how__activator">Let's create a popup!</button>
-		<div class="how-pop">
-			<h1 class="how-pop__title">This is the block with no styles</h1>
-			<p class="how-pop__title">Just click the button above</p>
-			<p class="how-pop__title">To make popup</p>
-			<p class="how-pop__title">It automaticaly gets sexy text styles</p>
-			<p class="how-pop__title">And all you need to make popup just call the function</p>
-			<p class="how-pop__title">h6 poppa() with arguments as at examples below. Dont forget <span class="how-pop__em text-select">coolText:&nbsp;true</span> argument to use such text styles for simple information popups</p>
-			<p class="how-pop__desc">p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quidem? Placeat, nam delectus? Placeat error vel nostrum ipsum officia consectetur asperiores quos rerum? Aliquam cupiditate porro id sint, exercitationem fugit!</p>
-		</div>
-	</section>
-	<section class="demo" id="demo">
-		<div class="container">
-			<h2 class="demo__title">Animations</h2>
-			<div class="row">
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--zoom-in">zoom-in</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--zoom-out">zoom-out</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--zoom-pong">zoom-pong</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--slide-up">slide-up</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--slide-right">slide-right</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--slide-down">slide-down</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--slide-left">slide-left</button>
-					</article>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="hero">
+      <h1 class="hero__title">Poppa Popups</h1>
+      <p class="hero__desc">
+        Easy to use Vanilla JS popup library<br />
+        Close on Esc or overlay click<br />
+        Animated
+      </p>
+      <div class="hero-buttons">
+        <a href="https://github.com/Boffeer/poppa" class="hero-buttons__get"
+          >Get Poppa</a
+        >
+        <a href="#demo" class="hero-buttons__demo">Demo</a>
+      </div>
+    </section>
+    <section class="how">
+      <h2 class="how__title">How it works</h2>
+      <button class="how__activator">Let's create a popup!</button>
+      <div class="how-pop">
+        <h1 class="how-pop__title">This is the block with no styles</h1>
+        <p class="how-pop__title">Just click the button above</p>
+        <p class="how-pop__title">To make popup</p>
+        <p class="how-pop__title">It automaticaly gets sexy text styles</p>
+        <p class="how-pop__title">
+          And all you need to make popup just call the function
+        </p>
+        <p class="how-pop__title">
+          h6 poppa() with arguments as at examples below. Dont forget
+          <span class="how-pop__em text-select">coolText:&nbsp;true</span>
+          argument to use such text styles for simple information popups
+        </p>
+        <p class="how-pop__desc">
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+          quidem? Placeat, nam delectus? Placeat error vel nostrum ipsum officia
+          consectetur asperiores quos rerum? Aliquam cupiditate porro id sint,
+          exercitationem fugit!
+        </p>
+      </div>
+    </section>
+    <section class="demo" id="demo">
+      <div class="container">
+        <h2 class="demo__title">Animations</h2>
+        <div class="row">
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--zoom-in">
+                zoom-in
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--zoom-out">
+                zoom-out
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--zoom-pong">
+                zoom-pong
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--slide-up">
+                slide-up
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--slide-right">
+                slide-right
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--slide-down">
+                slide-down
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--slide-left">
+                slide-left
+              </button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<section class="position">
-		<div class="container">
-			<h2 class="demo__title">Position</h2>
-			<div class="row">
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-top-left">top left</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-top">top</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-top-right">top right</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-left">left</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-center">center</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-right">right</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-bottom-left">bottom left</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-bottom">bottom</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-4 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--position-bottom-right">bottom right</button>
-					</article>
-				</div>
-			</div>
+    <section class="position">
+      <div class="container">
+        <h2 class="demo__title">Position</h2>
+        <div class="row">
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--position-top-left"
+              >
+                top left
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--position-top">
+                top
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--position-top-right"
+              >
+                top right
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--position-left"
+              >
+                left
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--position-center"
+              >
+                center
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--position-right"
+              >
+                right
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="
+                  demo-card__button demo-card__button--position-bottom-left
+                "
+              >
+                bottom left
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--position-bottom"
+              >
+                bottom
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-4 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="
+                  demo-card__button demo-card__button--position-bottom-right
+                "
+              >
+                bottom right
+              </button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		</div>
-	</section>
+    <section class="methods">
+      <div class="container">
+        <h2 class="methods__title">Functions</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-xl-6">
+            <article class="demo-card">
+              <p>openPop('.my-pop',onOpenFunction);</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-6">
+            <article class="demo-card">
+              <p>closePop('.my-pop', onCloseFunction);</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-6">
+            <article class="demo-card">
+              <p>closeAllPops();</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<section class="methods">
-		<div class="container">
-			<h2 class="methods__title">Functions</h2>
-			<div class="row">
-				<div class="col-md-6 col-lg-6 col-xl-6">
-					<article class="demo-card">
-						<p> openPop('.my-pop',onOpenFunction); </p>
-					</article>
-				</div>
-				<div class="col-md-6 col-lg-6 col-xl-6">
-					<article class="demo-card">
-						<p> closePop('.my-pop', onCloseFunction); </p>
-					</article>
-				</div>
-				<div class="col-md-6 col-lg-6 col-xl-6">
-					<article class="demo-card">
-						<p> closeAllPops(); </p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="closers">
+      <div class="container">
+        <h2 class="demo__title">Closers</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--closer-none">
+                none
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--closer-outer">
+                outer
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button class="demo-card__button demo-card__button--closer-inner">
+                inner
+              </button>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-4">
+            <article class="demo-card">
+              <button
+                class="demo-card__button demo-card__button--closer-corner"
+              >
+                corner
+              </button>
+              <p class="demo-card__default">default value</p>
+            </article>
+          </div>
+        </div>
+      </div>
 
+      <div class="poppa-pops-hider">
+        <div class="demo-closer-none demo-pop">
+          <div class="code">
+            <p>
+              <span class="code__function">poppa</span>
+              ({
+              <span class="code-row">
+                <span class="code__parameter">pop</span>:
+                <span class="code__string"> '.demo-zoom-in'</span>,
+              </span>
+              <span class="code-row">
+                <span class="code__parameter">clickTrigger</span>:
+                <span class="code__string"> '.demo-card__button--zoom-in'</span
+                >,
+              </span>
+              })
+            </p>
+          </div>
+        </div>
+        <div class="demo-closer-outer demo-pop">
+          <div class="code">
+            <p>
+              <span class="code__function">poppa</span>
+              ({
+              <span class="code-row">
+                <span class="code__parameter">pop</span>:
+                <span class="code__string"> '.demo-zoom-in'</span>,
+              </span>
+              <span class="code-row">
+                <span class="code__parameter">clickTrigger</span>:
+                <span class="code__string"> '.demo-card__button--zoom-in'</span
+                >,
+              </span>
+              })
+            </p>
+          </div>
+        </div>
+        <div class="demo-closer-inner demo-pop">
+          <div class="code">
+            <p>
+              <span class="code__function">poppa</span>
+              ({
+              <span class="code-row">
+                <span class="code__parameter">pop</span>:
+                <span class="code__string"> '.demo-zoom-in'</span>,
+              </span>
+              <span class="code-row">
+                <span class="code__parameter">clickTrigger</span>:
+                <span class="code__string"> '.demo-card__button--zoom-in'</span
+                >,
+              </span>
+              })
+            </p>
+          </div>
+        </div>
+        <div class="demo-closer-corner demo-pop">
+          <div class="code">
+            <p>
+              <span class="code__function">poppa</span>
+              ({
+              <span class="code-row">
+                <span class="code__parameter">pop</span>:
+                <span class="code__string"> '.demo-zoom-in'</span>,
+              </span>
+              <span class="code-row">
+                <span class="code__parameter">clickTrigger</span>:
+                <span class="code__string"> '.demo-card__button--zoom-in'</span
+                >,
+              </span>
+              })
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="poppa-pops">
+      <!-- ANIMATIONS -->
+      <div class="demo-zoom-in demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-zoom-in'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.demo-card__button--zoom-in'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'zoom-in'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
 
-	<section class="closers">
-		<div class="container">
-			<h2 class="demo__title">Closers</h2>
-			<div class="row justify-content-center">
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--closer-none">none</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--closer-outer">outer</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--closer-inner">inner</button>
-					</article>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-4">
-					<article class="demo-card">
-						<button class="demo-card__button demo-card__button--closer-corner">corner</button>
-						<p class="demo-card__default">default value</p>
-					</article>
-				</div>
-			</div>
-		</div>
+      <div class="demo-zoom-out demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-zoom-out'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.demo-card__button--zoom-out'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'zoom-out'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-zoom-pong demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-zoom-pong'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.demo-card__button--zoom-pong'</span
+              >,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'zoom-pong'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
 
-		<div class="poppa-pops-hider">
-			<div class="demo-closer-none demo-pop">
-				<div class="code">
-					<p>
-						<span class="code__function">poppa</span>
-						({
-							<span class="code-row">
-								<span class="code__parameter">pop</span>:
-								<span class="code__string"> '.demo-zoom-in'</span>,
-							</span>
-							<span class="code-row">
-								<span class="code__parameter">clickTrigger</span>:
-								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
-							</span>
-						})
-					</p>
-				</div>
-			</div>
-			<div class="demo-closer-outer demo-pop">
-				<div class="code">
-					<p>
-						<span class="code__function">poppa</span>
-						({
-							<span class="code-row">
-								<span class="code__parameter">pop</span>:
-								<span class="code__string"> '.demo-zoom-in'</span>,
-							</span>
-							<span class="code-row">
-								<span class="code__parameter">clickTrigger</span>:
-								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
-							</span>
-						})
-					</p>
-				</div>
-			</div>
-			<div class="demo-closer-inner demo-pop">
-				<div class="code">
-					<p>
-						<span class="code__function">poppa</span>
-						({
-							<span class="code-row">
-								<span class="code__parameter">pop</span>:
-								<span class="code__string"> '.demo-zoom-in'</span>,
-							</span>
-							<span class="code-row">
-								<span class="code__parameter">clickTrigger</span>:
-								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
-							</span>
-						})
-					</p>
-				</div>
-			</div>
-			<div class="demo-closer-corner demo-pop">
-				<div class="code">
-					<p>
-						<span class="code__function">poppa</span>
-						({
-							<span class="code-row">
-								<span class="code__parameter">pop</span>:
-								<span class="code__string"> '.demo-zoom-in'</span>,
-							</span>
-							<span class="code-row">
-								<span class="code__parameter">clickTrigger</span>:
-								<span class="code__string"> '.demo-card__button--zoom-in'</span>,
-							</span>
-						})
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div class="poppa-pops">
-		<!-- ANIMATIONS -->
-		<div class="demo-zoom-in demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-in'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-in'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'zoom-in'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
+      <div class="demo-slide-up demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-slide-up'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.demo-card__button--slide-up'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'slide-up'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-slide-down demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-slide-down'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.demo-card__button--slide-down'</span
+              >,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'slide-down'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-slide-left demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-slide-left'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.demo-card__button--slide-left'</span
+              >,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'slide-left'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-slide-right demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-slide-right'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string">
+                '.demo-card__button--slide-right'</span
+              >,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">animation</span>:
+              <span class="code__string"> 'slide-right'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <!-- /ANIMATIONS -->
+      <!-- POSITION -->
+      <div class="demo-position-top-left demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'top left'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-top demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'top'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-top-right demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'top right'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-left demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'left'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-center demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-right demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'right'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-bottom-left demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'bottom left'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-bottom demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'bottom'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <div class="demo-position-bottom-right demo-pop">
+        <div class="code">
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.your-pop'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">clickTrigger</span>:
+              <span class="code__string"> '.your__button'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">position</span>:
+              <span class="code__string"> 'bottom right'</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <!-- /POSITION -->
 
-		<div class="demo-zoom-out demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-out'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-out'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'zoom-out'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-zoom-pong demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-zoom-pong'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--zoom-pong'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'zoom-pong'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
+      <!-- TIMER -->
+      <div class="demo-timer demo-pop">
+        <div class="code">
+          <p>After 30 seconds this popup appears</p>
+          <br />
+          <p>
+            <span class="code__function">poppa</span>
+            ({
+            <span class="code-row">
+              <span class="code__parameter">pop</span>:
+              <span class="code__string"> '.demo-timer'</span>,
+            </span>
+            <span class="code-row">
+              <span class="code__parameter">timerTrigger</span>:
+              <span class="code__number"> 30</span>,
+            </span>
+            })
+          </p>
+        </div>
+      </div>
+      <!-- /TIMER -->
+    </div>
 
-		<div class="demo-slide-up demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-slide-up'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--slide-up'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'slide-up'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-slide-down demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-slide-down'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--slide-down'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'slide-down'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-slide-left demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-slide-left'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--slide-left'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'slide-left'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-slide-right demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-slide-right'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.demo-card__button--slide-right'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">animation</span>:
-							<span class="code__string"> 'slide-right'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<!-- /ANIMATIONS -->
-		<!-- POSITION -->
-		<div class="demo-position-top-left demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'top left'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-top demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'top'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-top-right demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'top right'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-left demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'left'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-center demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-right demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'right'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-bottom-left demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'bottom left'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-bottom demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'bottom'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<div class="demo-position-bottom-right demo-pop">
-			<div class="code">
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.your-pop'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">clickTrigger</span>:
-							<span class="code__string"> '.your__button'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">position</span>:
-							<span class="code__string"> 'bottom right'</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<!-- /POSITION -->
-
-		<!-- TIMER -->
-		<div class="demo-timer demo-pop">
-			<div class="code">
-				<p>After 30 seconds this popup appears</p>
-				<br>
-				<p>
-					<span class="code__function">poppa</span>
-					({
-						<span class="code-row">
-							<span class="code__parameter">pop</span>:
-							<span class="code__string"> '.demo-timer'</span>,
-						</span>
-						<span class="code-row">
-							<span class="code__parameter">timerTrigger</span>:
-							<span class="code__number"> 30</span>,
-						</span>
-					})
-				</p>
-			</div>
-		</div>
-		<!-- /TIMER -->
-	</div>
-
-
-	<script src="assets/poppa/poppa.js"></script>
-	<script src="js/index.js"></script>
-
-</body>
+    <script src="assets/poppa/poppa.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
