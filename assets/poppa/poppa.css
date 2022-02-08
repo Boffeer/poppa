@@ -317,4 +317,12 @@ html {
     color: #333333;
   }
 }
+
+.poppa-overlay--scrollable {
+  overflow-y: auto;
+}
+
+.poppa-overlay--scrollable .poppa-aligner {
+  height: auto;
+}
 /*# sourceMappingURL=poppa.css.map */

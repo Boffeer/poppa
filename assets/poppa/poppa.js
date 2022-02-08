@@ -113,6 +113,7 @@ function popToggle($) {
 	// )
 	let poppaOverlay = document.querySelector($.poppaOverlay)
 	let	isPopHidden = window.getComputedStyle(poppaOverlay).getPropertyValue('visibility') == 'hidden';
+
 	// let pop = $.pop;
 	if (isPopHidden) {
 		// console.log($.pop)
@@ -154,6 +155,10 @@ function createPopStructure($) {
 	typeof($.customPopOverlayClass) == 'string'
 		? jsPoppaOverlay.classList.add($.customPopOverlayClass)
 		: false
+
+	if ($.isPopOverlayScrollable) {
+		jsPoppaOverlay.classList.add('poppa-overlay--scrollable');
+	}
 
 	document.querySelector('body').appendChild(jsPoppaOverlay);
 

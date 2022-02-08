@@ -129,7 +129,7 @@ document.querySelector('.how__activator').addEventListener('click', function (ev
 	if (howActivatorCounter < 2) {
 		this.innerText = 'Call the popup';
 
-		poppa({
+		const howPop = new poppa({
 			pop: '.how-pop',
 			clickTrigger: '.how__activator',
 			coolText: true,

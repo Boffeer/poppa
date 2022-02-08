@@ -42,7 +42,7 @@ Now by clicking on `'.your-button-or-else'` you will open `'.your-popup-layout-c
 | onLeavingDelay      | number in seconds | 30            |
 | escCloser      | bool | true            |
 | openedByDefault   | bool              | false          |
-
+| isPopOverlayScrollable | bool | false |
 ## Functions
 
 | Function                                      | is released |
